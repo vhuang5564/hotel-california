@@ -1,0 +1,36 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  max-width: 10rem;
+  background-color: lightgray;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  h1 {
+    display: flex;
+    padding: 0.1em;
+    opacity: 0.5;
+  }
+
+  h1:hover {
+    opacity: 1;
+  }
+}
+
+.icon {
+  align-self: flex-end;
+  position: absolute;
+  left: 4.5em;
+  font-size: 2em;
+  top: 15.5em;
+
+  :hover {
+    color: darkcyan;
+  }
+
+  :active {
+    transition: width 0
+  }
+}
