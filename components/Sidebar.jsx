@@ -1,5 +1,6 @@
 import React from "react";
 import styles from '../styles/Sidebar.module.scss';
+import Button from '@material-ui/core/Button';
 
 export default function Sidebar(props) {
   const minimize = console.log("minimized");
@@ -16,6 +17,9 @@ export default function Sidebar(props) {
       <h1>Services</h1>
       <h1>Front-Desk</h1>
       <h1>Concierge</h1>
+      <Button>
+        Hello World
+      </Button>
     </section>
   );
 }
