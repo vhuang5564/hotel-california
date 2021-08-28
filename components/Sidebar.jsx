@@ -5,6 +5,7 @@ import IconButton from "@material-ui/core/Button";
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import AppsIcon from '@material-ui/icons/Apps';
 import LocalDiningIcon from '@material-ui/icons/LocalDining';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 export default function Sidebar(props) {
   let n = 0;
@@ -28,7 +29,7 @@ export default function Sidebar(props) {
       <h1>Restuarant & Lounges</h1>
       <h1>Spa & Salon</h1>
       <h1>Hotel Amenities</h1>
-      <h1>Transport</h1>
+      <h1>Transport <LocationOnIcon /></h1>
       <h1>Local Flavor</h1>
       <h1>Services</h1>
       <h1>Front-Desk</h1>
