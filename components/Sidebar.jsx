@@ -19,12 +19,14 @@ import { useState } from "react";
 export default function Sidebar(props) {
   const [sidebar, setSidebar] = useState(true);
 
+  // sets sidebar value to true or false whenever clicked
   const showSidebar = () => {
     setSidebar(!sidebar);
     console.log(sidebar);
   };
 
   return (
+    // Shows/hides sidebar if state is true/false
     <section className={sidebar ? styles.sidebar : styles.empty}>
       <h1>Hotel California
         <IconButton
@@ -33,17 +35,13 @@ export default function Sidebar(props) {
           onClick={showSidebar}
         />
       </h1>
-      <Button className={styles.button}>ALL AREAS <AppsIcon /></Button>
-      <Button>In Room Dining <MenuBookIcon /></Button>
-      <Button>Restuarant & Lounges <LocalDiningIcon /></Button>
-      <Button>Spa & Salon <BathtubIcon /></Button>
-      <Button>Hotel Amenities <PoolIcon /></Button>
-      <Button>Transport <SubwayIcon /></Button>
-      <Button>Local Flavor <StreetviewIcon /></Button>
-      <Button>Services <AddIcCallIcon /></Button>
-      <Button>Front-Desk <AssignmentIndIcon /></Button>
-      <Button>Valet Service <TimeToLeaveIcon /></Button>
-      <Button>Concierge <MoodIcon /></Button>
+      {/* class css .button in .sidebar */}
+      <Button>MEETING ROOM 1 <AppsIcon /></Button>
+      <Button>MEETING ROOM 2 <MenuBookIcon /></Button>
+      <Button>MEETING ROOM 3 <LocalDiningIcon /></Button>
+      <Button>MEETING ROOM 4 <BathtubIcon /></Button>
+      <Button>MEETING ROOM 5 <PoolIcon /></Button>
+      <Button>MEETING ROOM 6 <AddIcCallIcon /></Button>
     </section>
   );
 }

@@ -7,6 +7,9 @@
   padding: 0.5em !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
+  max-height: 30rem;
+  animation-duration: 1s;
+  animation-name: expand;
 
   h1 {
     display: flex;
@@ -32,21 +35,53 @@
   button:hover {
     opacity: 1 !important;
   }
-
 }
 
 .icon {
-  
+
   :hover {
     color: darkcyan;
   }
 }
 
 .empty {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem !important;
+  background-color: lightgray !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  max-height: 30rem;
   width: 0;
   overflow: hidden;
+  animation-duration: 1s;
+  animation-name: collapse;
 
   .icon {
     position: absolute !important;
+  }
+}
+
+@keyframes collapse {
+  from {
+    width: 20rem;
+    overflow: hidden;
+  }
+
+  to {
+    width: 0;
+    overflow: hidden;
+  }
+}
+
+@keyframes expand {
+  from {
+    width: 0rem;
+    overflow: hidden;
+  }
+
+  to {
+    width: 20rem;
+    overflow: hidden;
   }
 }
