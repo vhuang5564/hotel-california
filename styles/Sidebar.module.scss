@@ -33,19 +33,20 @@
     opacity: 1 !important;
   }
 
-  &__collapse {
-    width: 0 !important;
-  }
 }
 
 .icon {
-  font-size: 2em;
-
+  
   :hover {
     color: darkcyan;
   }
+}
 
-  :active {
-    transition: width 0
+.empty {
+  width: 0;
+  overflow: hidden;
+
+  .icon {
+    position: absolute !important;
   }
 }

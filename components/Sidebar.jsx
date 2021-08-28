@@ -17,23 +17,20 @@ import BathtubIcon from '@material-ui/icons/Bathtub';
 import { useState } from "react";
 
 export default function Sidebar(props) {
-  const [sidebar, setSidebar] = useState(false);
+  const [sidebar, setSidebar] = useState(true);
 
-  let n = 0;
-
-  const collapse = () => {
-    
-    n = n + 1;
-    console.log(n);
+  const showSidebar = () => {
+    setSidebar(!sidebar);
+    console.log(sidebar);
   };
 
   return (
-    <section className={styles.sidebar}>
+    <section className={sidebar ? styles.sidebar : styles.empty}>
       <h1>Hotel California
         <IconButton
           className={styles.icon}
           startIcon={<ArrowForwardIosIcon />}
-          onClick={collapse}
+          onClick={showSidebar}
         />
       </h1>
       <Button className={styles.button}>ALL AREAS <AppsIcon /></Button>
