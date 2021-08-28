@@ -32,17 +32,17 @@ export default function Sidebar(props) {
           onClick={expand}
         />
       </h1>
-      <h1>All Areas <AppsIcon /></h1>
-      <h1>In Room Dining <MenuBookIcon /></h1>
-      <h1>Restuarant & Lounges <LocalDiningIcon /></h1>
-      <h1>Spa & Salon <BathtubIcon /></h1>
-      <h1>Hotel Amenities <PoolIcon /></h1>
-      <h1>Transport <SubwayIcon /></h1>
-      <h1>Local Flavor <StreetviewIcon /></h1>
-      <h1>Services <AddIcCallIcon /></h1>
-      <h1>Front-Desk <AssignmentIndIcon /></h1>
-      <h1>Valet Service <TimeToLeaveIcon /></h1>
-      <h1>Concierge <MoodIcon /></h1>
+      <Button className={styles.button}>ALL AREAS <AppsIcon /></Button>
+      <Button>In Room Dining <MenuBookIcon /></Button>
+      <Button>Restuarant & Lounges <LocalDiningIcon /></Button>
+      <Button>Spa & Salon <BathtubIcon /></Button>
+      <Button>Hotel Amenities <PoolIcon /></Button>
+      <Button>Transport <SubwayIcon /></Button>
+      <Button>Local Flavor <StreetviewIcon /></Button>
+      <Button>Services <AddIcCallIcon /></Button>
+      <Button>Front-Desk <AssignmentIndIcon /></Button>
+      <Button>Valet Service <TimeToLeaveIcon /></Button>
+      <Button>Concierge <MoodIcon /></Button>
     </section>
   );
 }
