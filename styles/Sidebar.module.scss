@@ -13,7 +13,7 @@
     padding: 0.1em;
     opacity: 0.5;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
   }
 
   h1:hover {
@@ -22,7 +22,7 @@
 
   button {
     display: flex !important;
-    padding: 0.1em !important;
+    padding: 1em;
     justify-content: space-between !important;
     align-items: flex-end !important;
     font-size: 16px !important;
