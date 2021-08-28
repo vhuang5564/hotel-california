@@ -14,11 +14,15 @@ import PoolIcon from '@material-ui/icons/Pool';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import AddIcCallIcon from '@material-ui/icons/AddIcCall';
 import BathtubIcon from '@material-ui/icons/Bathtub';
+import { useState } from "react";
 
 export default function Sidebar(props) {
+  const [sidebar, setSidebar] = useState(false);
+
   let n = 0;
 
-  const expand = () => {
+  const collapse = () => {
+    
     n = n + 1;
     console.log(n);
   };
@@ -29,7 +33,7 @@ export default function Sidebar(props) {
         <IconButton
           className={styles.icon}
           startIcon={<ArrowForwardIosIcon />}
-          onClick={expand}
+          onClick={collapse}
         />
       </h1>
       <Button className={styles.button}>ALL AREAS <AppsIcon /></Button>

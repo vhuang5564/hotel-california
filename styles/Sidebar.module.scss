@@ -32,6 +32,10 @@
   button:hover {
     opacity: 1 !important;
   }
+
+  &__collapse {
+    width: 0 !important;
+  }
 }
 
 .icon {
