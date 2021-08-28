@@ -20,6 +20,7 @@ export default function Sidebar(props) {
   const [sidebar, setSidebar] = useState(true);
 
   // sets sidebar value to true or false whenever clicked
+  // showSidebar is still bugged on launch will animate expand
   const showSidebar = () => {
     setSidebar(!sidebar);
     console.log(sidebar);

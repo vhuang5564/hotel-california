@@ -37,10 +37,42 @@
   }
 }
 
-.icon {
+.expand {
+  display: flex !important;
+  flex-direction: column !important;
+  max-width: 20rem !important;
+  background-color: lightgray !important;
+  border-radius: 0.5em !important;
+  padding: 0.5em !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  max-height: 30rem;
+  animation-duration: 1s;
+  animation-name: expand;
 
-  :hover {
-    color: darkcyan;
+  h1 {
+    display: flex;
+    padding: 0.1em;
+    opacity: 0.5;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h1:hover {
+    opacity: 1;
+  }
+
+  button {
+    display: flex !important;
+    padding: 1em;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    font-size: 16px !important;
+    font-family: unset !important;
+  }
+
+  button:hover {
+    opacity: 1 !important;
   }
 }
 
@@ -80,7 +112,6 @@
   }
 }
 
-// collapse sidebar has bugs in it wont maintain shape
 @keyframes collapse {
   from {
     width: 20rem;
