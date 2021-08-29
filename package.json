@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^2.30.0",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
     "next": "11.1.0",
     "node-sass": "^6.0.1",
     "react": "17.0.2",
@@ -16,6 +19,7 @@
   },
   "devDependencies": {
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.0"
+    "eslint-config-next": "11.1.0",
+    "prisma": "^2.30.0"
   }
 }
