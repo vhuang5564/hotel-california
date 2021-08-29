@@ -1,10 +1,8 @@
-import Image from 'next/image';
-import background from "../public/pictures/king.jpg";
+import styles from "../styles/Layout.module.scss";
 
-export default function Layout (props) {
+export default function Layout(props) {
   return (
-    <main>
-      <Image src={background} alt="background"/>
-    </main>
+    <body className={styles.background}>
+    </body>
   );
 }
