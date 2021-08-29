@@ -1,9 +1,7 @@
-import Sidebar from "../components/Sidebar";
+import Ballroom from "../components/Ballroom";
 
 export default function test() {
   return (
-    <div>
-      <Sidebar />
-    </div>
+    <Ballroom />
   );
 }
