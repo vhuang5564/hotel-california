@@ -1,4 +1,8 @@
+.grid_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .ballroom {
-  display: flex;
-  
+  grid-area: auto;
 }
