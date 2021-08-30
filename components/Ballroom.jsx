@@ -1,6 +1,5 @@
 import Button from '@material-ui/core/Button';
 import styles from '../styles/Ballroom.module.scss';
-import ButtonBase from '@material-ui/core/ButtonBase';
 import AppsIcon from '@material-ui/icons/Apps';
 import LocalDiningIcon from '@material-ui/icons/LocalDining';
 import StreetviewIcon from '@material-ui/icons/Streetview';
@@ -72,7 +71,7 @@ export default function Ballroom(props) {
       icon: <TimeToLeaveIcon />
     },
     {
-      url: 'placeholder',
+      url: 'other.png',
       title: 'OTHER REQUESTS',
       icon: <AppsIcon />
     }
@@ -80,33 +79,25 @@ export default function Ballroom(props) {
 
   const request = (image) => {
     console.log(image.title); //object title
-    console.log(opacity);
-    setOpacity(0.5)
   }
-
-  const [opacity, setOpacity] = useState(1);
-
 
   return (
     <section className={styles.grid_container}>
-      {images.map((image) => 
+      {images.map((image) =>
         (
-        <div>
-          <h2 className={styles.wording}>
+          <div key={image.title}>
+            <h2 className={styles.wording}>
               {image.title} {image.icon}
-          </h2>
-          <Button
-            key={image.title} 
-            className={styles.ballroom} 
-            variant="outlined" 
-            src="/all_areas.jpg" alt="all_areas"
-            style={{
-              backgroundImage: `url(${image.url})`,
-              opacity: opacity
-            }}
-            onClick={() => request(image)}
-          ></Button>
-        </div>
+            </h2>
+            <Button
+              className={styles.ballroom}
+              variant="outlined"
+              style={{
+                backgroundImage: `url(${image.url})`,
+              }}
+              onClick={() => request(image)}
+            ></Button>
+          </div>
         )
       )}
     </section>
