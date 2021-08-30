@@ -2,6 +2,9 @@ import Ballroom from "../components/Ballroom";
 
 export default function test() {
   return (
-    <Ballroom />
+    <body>
+      <h2>Hotel California</h2>
+      <Ballroom />
+    </body>
   );
 }
