@@ -12,7 +12,7 @@ import BathtubIcon from '@material-ui/icons/Bathtub';
 import { useState } from "react";
 
 export default function Sidebar() {
-  const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState(false);
 
   // sets sidebar value to true or false whenever clicked
   // showSidebar is still bugged on launch will animate expand
