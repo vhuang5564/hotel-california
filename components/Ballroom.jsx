@@ -11,9 +11,8 @@ import PoolIcon from '@material-ui/icons/Pool';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import AddIcCallIcon from '@material-ui/icons/AddIcCall';
 import BathtubIcon from '@material-ui/icons/Bathtub';
-import { useState } from 'react'
 
-export default function Ballroom(props) {
+export default function Ballroom() {
   const images = [
     {
       url: '/all_areas.jpg',
@@ -79,7 +78,7 @@ export default function Ballroom(props) {
 
   const request = (image) => {
     console.log(image.title); //object title
-  }
+  };
 
   return (
     <section className={styles.grid_container}>
