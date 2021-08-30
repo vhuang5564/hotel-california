@@ -1,0 +1,23 @@
+.grid_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.ballroom {
+  background-color: aliceblue !important; // delete this later
+  background-size: cover; // or 100% 100% to fill
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 15rem;
+  width: 100%;
+}
+
+.ballroom:focus {
+  opacity: 0.5;
+}
+
+.wording {
+  font-size: large;
+  display: flex;
+  justify-content: center;
+}
