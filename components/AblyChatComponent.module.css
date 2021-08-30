@@ -1,6 +1,7 @@
 .chatHolder {
     display: grid;
     grid-template-rows: 1fr 100px;
+    box-sizing: border-box;
 }
 .chatText {
     display: flex;
