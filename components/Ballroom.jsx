@@ -1,5 +1,6 @@
 import Button from '@material-ui/core/Button';
 import styles from '../styles/Ballroom.module.scss';
+import ButtonBase from '@material-ui/core/ButtonBase';
 import AppsIcon from '@material-ui/icons/Apps';
 import LocalDiningIcon from '@material-ui/icons/LocalDining';
 import StreetviewIcon from '@material-ui/icons/Streetview';
@@ -19,7 +20,7 @@ export default function Ballroom(props) {
       title: 'ALL AREAS'
     },
     {
-      url: 'placeholder',
+      url: 'https://thumbs.dreamstime.com/z/d-silver-restaurant-cloche-white-background-32658899.jpg',
       title: 'IN-ROOM DINING'
     },
     {
@@ -64,17 +65,28 @@ export default function Ballroom(props) {
     }
   ];
 
+  const request = (image) => {
+    console.log(image.title)
+    console.log("clicked")
+    // console.log(image.title)
+  }
+
   return (
     <section className={styles.grid_container}>
 
       {images.map((image) => 
-      (
-        <Button className={styles.ballroom} variant="outlined" 
-        style={{backgroundImage: `url(./public/favicon.ico)`}}
-        >{image.title}</Button>
-      )
-      
+        (
+          <Button
+            key={image.title} 
+            className={styles.ballroom} 
+            variant="outlined" 
+            style={{backgroundImage: `url(${image.url})`}}
+            onClick={request}
+          >{image.title}</Button>
+        )
       )}
+
+
       {/* <Button className={styles.ballroom} startIcon={<AppsIcon />} disabled variant="outlined">ALL AREAS</Button>
       <Button className={styles.ballroom} startIcon={<LocalDiningIcon />} variant="contained">IN-ROOM DINING</Button>
       <Button className={styles.ballroom} startIcon={<MenuBookIcon />} variant="outlined">RESTAURANT & LOUNGES</Button>
