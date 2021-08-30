@@ -22,27 +22,31 @@ const AblyChatComponent = () => {
         // setMessages react useState hook
     });
 
-    const sendChatMessage = (messageText) => {
+    const sendChatMessage = (messageText) => { //resposible for publishing new messages
         channel.publish({ name: "chat-message", data: messageText });
         setMessageText("");
         inputBox.focus();
     }
 
-    const handleFormSubmission = (event) => {
+    const handleFormSubmission = (event) => { //When triggered when the submit hutton is clicked calls send message to prevent the page for reloading
         event.preventDefault();
         sendChatMessage(messageText);
     }
-    const handleKeyPress = (event) => {
-        if (e.charCode !== 13 || messageTextIsEmpty) {
+    const handleKeyPress = (event) => { //makes sure that if the user presses enter the sendchatmessage is triggered
+        if (event.charCode !== 13 || messageTextIsEmpty) {
             return;
         }
         sendChatMessage(messageText);
         event.preventDefault();
     }
-    const messages = receivedMessages.map((message, index) => {
+    const messages = receivedMessages.map((message, index) => { //Will display messages that are sent
         const author = message.connectionId === ably.connection.id ? "me" : "other";
         return <span key={index} className={styles.message} data-author={author}>{message.data}</span>;
     });
+
+    useEffect(() => {
+        messageEnd.scrollIntoView({ behaviour: "smooth" });
+      });
 
     return (
         <div className={styles.chatHolder}>
