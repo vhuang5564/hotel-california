@@ -16,52 +16,64 @@ import BathtubIcon from '@material-ui/icons/Bathtub';
 export default function Ballroom(props) {
   const images = [
     {
-      url: '../public/favicon.ico',
-      title: 'ALL AREAS'
+      url: 'https://www.hospitalitynet.org/picture/xxl_153098883.jpg?t=20190328105447',
+      title: 'ALL AREAS',
+      icon: <AppsIcon />
     },
     {
-      url: 'https://thumbs.dreamstime.com/z/d-silver-restaurant-cloche-white-background-32658899.jpg',
-      title: 'IN-ROOM DINING'
+      url: 'https://st.depositphotos.com/1575673/3350/i/950/depositphotos_33503107-stock-photo-restaurant-cloche-with-lid.jpg',
+      title: 'IN-ROOM DINING',
+      icon: <LocalDiningIcon />
     },
     {
-      url: 'placeholder',
-      title: 'RESTAURANT & LOUNGES'
+      url: 'https://cdn.wealthygorilla.com/wp-content/uploads/2019/11/Most-Expensive-Restaurants-Maison-Pic-Valence-Paris-France.webp',
+      title: 'RESTAURANT & LOUNGES',
+      icon: <MenuBookIcon />
     },
     {
-      url: 'placeholder',
-      title: 'SPA & SALON'
+      url: 'https://cache.marriott.com/marriottassets/marriott/SI/si-spa-001-hor-feat.jpg?downsize=1440px:*',
+      title: 'SPA & SALON',
+      icon: <BathtubIcon />
     },
     {
-      url: 'placeholder',
-      title: 'HOTEL AMENITIES'
+      url: 'https://insights.ehotelier.com/wp-content/uploads/sites/6/2018/05/Hotel-amenities-large-300x300.jpg',
+      title: 'HOTEL AMENITIES',
+      icon: <PoolIcon />
     },
     {
-      url: 'placeholder',
-      title: 'FRONT DESK'
-    },
-    {
-      url: 'placeholder',
-      title: 'SERVICES'
-    },
-    {
-      url: 'placeholder',
-      title: 'LOCAL FLAVOR'
-    },
-    {
-      url: 'placeholder',
-      title: 'TRANSPORT'
+      url: 'https://www.plazaprotection.com/blog/wp-content/uploads/2020/05/front-desk-security-guards.jpg',
+      title: 'FRONT DESK',
+      icon: <MoodIcon />
     },
     {
       url: 'placeholder',
-      title: 'CONCIERGE'
+      title: 'SERVICES',
+      icon: <AddIcCallIcon />
     },
     {
       url: 'placeholder',
-      title: 'VALET SERVICE'
+      title: 'LOCAL FLAVOR',
+      icon: <StreetviewIcon />
     },
     {
       url: 'placeholder',
-      title: 'OTHER REQUESTS'
+      title: 'TRANSPORT',
+      icon: <SubwayIcon />
+    },
+    {
+      url: 'placeholder',
+      title: 'CONCIERGE',
+      icon: <AssignmentIndIcon />
+    },
+    {
+      url: 'placeholder',
+      title: 'VALET SERVICE',
+      icon: <TimeToLeaveIcon />
+    },
+    {
+      url: 'placeholder',
+      title: 'OTHER REQUESTS',
+      icon: <AppsIcon />
     }
   ];
 
@@ -76,13 +88,20 @@ export default function Ballroom(props) {
 
       {images.map((image) => 
         (
+        <div>
+          <h2 className={styles.wording}>
+              {image.title} {image.icon}
+          </h2>
           <Button
             key={image.title} 
             className={styles.ballroom} 
             variant="outlined" 
-            style={{backgroundImage: `url(${image.url})`}}
+            style={{
+              backgroundImage: `url(${image.url})`
+            }}
             onClick={request}
-          >{image.title}</Button>
+          ></Button>
+        </div>
         )
       )}
 

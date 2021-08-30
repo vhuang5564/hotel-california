@@ -4,7 +4,17 @@
 }
 
 .ballroom {
-  background-color: aliceblue !important;
-  background-size: cover;
-  height: 10rem;
+  background-color: aliceblue !important; // delete this later
+  background-size: cover; // or 100% 100% to fill
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 15rem;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.wording {
+  font-size: large;
+  display: flex;
+  justify-content: center;
 }
