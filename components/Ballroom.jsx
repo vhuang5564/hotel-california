@@ -11,7 +11,6 @@ import PoolIcon from '@material-ui/icons/Pool';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import AddIcCallIcon from '@material-ui/icons/AddIcCall';
 import BathtubIcon from '@material-ui/icons/Bathtub';
-
 export default function Ballroom() {
   const images = [
     {
@@ -84,7 +83,7 @@ export default function Ballroom() {
     <section className={styles.grid_container}>
       {images.map((image) =>
         (
-          <div key={image.title}>
+          <div key={image.title} className={styles.card}>
             <h2 className={styles.wording}>
               {image.title} {image.icon}
             </h2>
