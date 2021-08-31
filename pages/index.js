@@ -2,11 +2,11 @@ import Head from 'next/head';
 import prisma from '../lib/prisma';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 
 
 
-export const getStaticProps = async () => {
+export const getStaticProps = async() => {
   const ballrooms = await prisma.ballroom.findMany();
   return { props: { ballrooms } };
 };
