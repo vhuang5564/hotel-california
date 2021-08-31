@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
-import styles from "./chat.module.css"
+import styles from "../styles/chat.module.css"
 
 const AblyChatComponent = dynamic(() => import('../components/AblyChatComponent'), { ssr: false });
 
