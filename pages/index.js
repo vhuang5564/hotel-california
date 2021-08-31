@@ -1,8 +1,8 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import prisma from '../lib/prisma';
 import Link from 'next/link';
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
 
 
 
@@ -33,13 +33,19 @@ export default function Home({ ballrooms }) {
 
         <div className={styles.grid}>
            
-        {ballrooms.map((ballroom) => (
-          <Link key={ballroom.id} href="/requests/[id]" as={`/requests/${ballroom.name}`} >
-          <a className={styles.card}>
-            <h2>{ballroom.name} &rarr;</h2>
-            <p>Click to check instant request options</p>
-          </a>
-          </Link>
+          {ballrooms.map((ballroom) => (
+            <Link href="/" key={ballroom.id}>
+              <a className={styles.card}>
+                <h2>{ballroom.name} &rarr;</h2>
+                <p>Click to check instant request options</p>
+                <div
+                  className={styles.background}
+                  style={{
+                    backgroundImage: `url(${ballroom.imageUrl})`
+                  }}
+                ></div>
+              </a>
+            </Link>
           ))}
 
         </div>
@@ -59,5 +65,5 @@ export default function Home({ ballrooms }) {
         </a>
       </footer>
     </div>
-  )
+  );
 }
