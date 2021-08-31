@@ -33,13 +33,19 @@ export default function Home({ ballrooms }) {
 
         <div className={styles.grid}>
            
-        {ballrooms.map((ballroom) => (
-          <Link href="/" key={ballroom.id}>
-          <a className={styles.card}>
-            <h2>{ballroom.name} &rarr;</h2>
-            <p>Click to check instant request options</p>
-          </a>
-          </Link>
+          {ballrooms.map((ballroom) => (
+            <Link href="/" key={ballroom.id}>
+              <a className={styles.card}>
+                <h2>{ballroom.name} &rarr;</h2>
+                <p>Click to check instant request options</p>
+                <div
+                  className={styles.background}
+                  style={{
+                    backgroundImage: `url(buena.jpg)`
+                  }}
+                ></div>
+              </a>
+            </Link>
           ))}
 
         </div>
