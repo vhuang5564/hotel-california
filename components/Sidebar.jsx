@@ -4,11 +4,9 @@ import Button from '@material-ui/core/Button';
 import IconButton from "@material-ui/core/Button";
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import AppsIcon from '@material-ui/icons/Apps';
-import LocalDiningIcon from '@material-ui/icons/LocalDining';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import PoolIcon from '@material-ui/icons/Pool';
 import AddIcCallIcon from '@material-ui/icons/AddIcCall';
-import BathtubIcon from '@material-ui/icons/Bathtub';
 import { useState } from "react";
 
 export default function Sidebar() {
@@ -32,12 +30,11 @@ export default function Sidebar() {
         />
       </h1>
       {/* class css .button in .sidebar */}
-      <Button>MEETING ROOM 1 <AppsIcon /></Button>
-      <Button>MEETING ROOM 2 <MenuBookIcon /></Button>
-      <Link href="/review"><a><Button>REVIEWS <LocalDiningIcon /></Button></a></Link>
-      <Button>MEETING ROOM 4 <BathtubIcon /></Button>
-      <Button>MEETING ROOM 5 <PoolIcon /></Button>
-      <Button>MEETING ROOM 6 <AddIcCallIcon /></Button>
+      <Link href="/"><a><Button>HOME <AppsIcon /></Button></a></Link>
+      <Link href="/chat"><a><Button>CHAT <AddIcCallIcon /></Button></a></Link>
+      <Link href="/review"><a><Button>REVIEWS <MenuBookIcon /></Button></a></Link>
+      <Link href="/"><a><Button>FAQ <PoolIcon /></Button></a></Link>
+      
     </section>
   );
 }
