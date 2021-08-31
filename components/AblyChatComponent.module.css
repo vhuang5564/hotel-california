@@ -53,7 +53,8 @@
     flex-grow: 0;
 }
 .message.data{
-    background-color: #eef5f8;
+    background: linear-gradient(to right,#363795,#005C97);
+    background-color: rgba(0, 0, 0, 0);
     padding: 1em;
     border-radius: 10px;
         border-bottom-right-radius: 10px;
@@ -61,8 +62,7 @@
 }
 
 .message[data-author="me"]{
-    background: linear-gradient(to right,#363795,#005C97);
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #eef5f8;
 color: white;
 -webkit-align-self: flex-end;
 -ms-flex-item-align: end;
