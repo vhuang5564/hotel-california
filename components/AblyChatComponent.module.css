@@ -1,3 +1,15 @@
+.jsx-641449633{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: calc(100% - 40px);
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.2);
+    background-color: white;
+}
+
 .chatHolder {
     display: grid;
     grid-template-rows: 1fr 100px;
@@ -46,4 +58,15 @@
     border-radius: 10px;
         border-bottom-right-radius: 10px;
     flex-grow: 0;
+}
+
+.message[data-author="me"]{
+    background: linear-gradient(to right,#363795,#005C97);
+    background-color: rgba(0, 0, 0, 0);
+color: white;
+-webkit-align-self: flex-end;
+-ms-flex-item-align: end;
+align-self: flex-end;
+border-bottom-right-radius: 0 !important;
+border-bottom-left-radius: 10px !important;
 }
