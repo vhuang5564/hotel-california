@@ -41,7 +41,7 @@ export default function Home({ ballrooms }) {
                 <div
                   className={styles.background}
                   style={{
-                    backgroundImage: `url(buena.jpg)`
+                    backgroundImage: `url(${ballroom.imageUrl})`
                   }}
                 ></div>
               </a>
