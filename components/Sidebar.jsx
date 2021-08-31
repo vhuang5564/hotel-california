@@ -1,4 +1,4 @@
-import React from "react";
+import Link from 'next/link';
 import styles from '../styles/Sidebar.module.scss';
 import Button from '@material-ui/core/Button';
 import IconButton from "@material-ui/core/Button";
@@ -34,7 +34,7 @@ export default function Sidebar() {
       {/* class css .button in .sidebar */}
       <Button>MEETING ROOM 1 <AppsIcon /></Button>
       <Button>MEETING ROOM 2 <MenuBookIcon /></Button>
-      <Button>MEETING ROOM 3 <LocalDiningIcon /></Button>
+      <Link href="/review"><a><Button>REVIEWS <LocalDiningIcon /></Button></a></Link>
       <Button>MEETING ROOM 4 <BathtubIcon /></Button>
       <Button>MEETING ROOM 5 <PoolIcon /></Button>
       <Button>MEETING ROOM 6 <AddIcCallIcon /></Button>
