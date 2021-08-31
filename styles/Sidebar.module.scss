@@ -10,6 +10,8 @@
   max-height: 30rem;
   animation-duration: 1s;
   animation-name: expand;
+  position: fixed;
+  z-index: 1;
 
   h1 {
     display: flex;
@@ -43,13 +45,15 @@
   max-width: 20rem !important;
   background-color: lightgray !important;
   box-sizing: border-box !important;
-  overflow: hidden !important;
+  // overflow: hidden !important;
   min-height: 30rem;
   max-height: 30rem;
   width: 0;
   overflow: hidden;
   animation-duration: 1s;
   animation-name: collapse;
+  position: fixed;
+  z-index: 1;
 
   h1 {
     display: flex;
@@ -69,7 +73,9 @@
   }
 
   .icon {
-    position: absolute !important;
+    position: fixed;
+    z-index: 1;
+    background-color: lightgray;
   }
 }
 

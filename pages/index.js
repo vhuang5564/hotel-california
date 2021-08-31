@@ -34,7 +34,7 @@ export default function Home({ ballrooms }) {
         <div className={styles.grid}>
            
         {ballrooms.map((ballroom) => (
-          <Link href="/" key={ballroom.id}>
+          <Link key={ballroom.id} href="/requests/[id]" as={`/requests/${ballroom.name}`} >
           <a className={styles.card}>
             <h2>{ballroom.name} &rarr;</h2>
             <p>Click to check instant request options</p>
