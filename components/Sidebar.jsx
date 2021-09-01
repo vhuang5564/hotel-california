@@ -32,7 +32,7 @@ export default function Sidebar() {
       {/* class css .button in .sidebar */}
       <Link href="/"><a><Button>HOME <AppsIcon /></Button></a></Link>
       <Link href="/chat"><a><Button>CHAT <AddIcCallIcon /></Button></a></Link>
-      <Link href="/review"><a><Button>REVIEWS <MenuBookIcon /></Button></a></Link>
+      <Link href="/reviews"><a><Button>REVIEWS <MenuBookIcon /></Button></a></Link>
       <Link href="/"><a><Button>FAQ <PoolIcon /></Button></a></Link>
       
     </section>
