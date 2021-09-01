@@ -15,57 +15,57 @@ export default function Ballroom() {
   const images = [
     {
       url: '/all_areas.jpg',
-      title: 'ALL AREAS',
+      title: 'COFFEE SERVICE',
       icon: <AppsIcon />
     },
     {
       url: '/cloche.jpg',
-      title: 'IN-ROOM DINING',
+      title: 'SALES REPRESENTATIVE REQUIRED',
       icon: <LocalDiningIcon />
     },
     {
       url: '/restuarant.webp',
-      title: 'RESTAURANT & LOUNGES',
+      title: 'ASSISTANCE WITH AUDIO VISUAL',
       icon: <MenuBookIcon />
     },
     {
       url: '/spa.jpg',
-      title: 'SPA & SALON',
+      title: 'COPY OF THE BANQUET EVENT ORDER',
       icon: <BathtubIcon />
     },
     {
       url: '/amenities.jpg',
-      title: 'HOTEL AMENITIES',
+      title: 'NEW MEETING ROOM KEY',
       icon: <PoolIcon />
     },
     {
       url: '/desk.jpg',
-      title: 'FRONT DESK',
+      title: 'RESTOCK BOTTLED WATER',
       icon: <MoodIcon />
     },
     {
       url: '/service.jpg',
-      title: 'SERVICES',
+      title: 'ASSISTANCE MAKING XEROX COPIES',
       icon: <AddIcCallIcon />
     },
     {
       url: '/stall.jpg_fit=scale',
-      title: 'LOCAL FLAVOR',
+      title: 'WHEEL CART',
       icon: <StreetviewIcon />
     },
     {
       url: 'bus.jpg',
-      title: 'TRANSPORT',
+      title: 'EXTRA CHAIRS',
       icon: <SubwayIcon />
     },
     {
       url: 'concierge.jpg',
-      title: 'CONCIERGE',
+      title: 'MEETING ROOM REFRESH',
       icon: <AssignmentIndIcon />
     },
     {
       url: 'valet.jpg',
-      title: 'VALET SERVICE',
+      title: 'WET FLOOR',
       icon: <TimeToLeaveIcon />
     },
     {
