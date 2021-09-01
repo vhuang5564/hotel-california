@@ -4,6 +4,7 @@
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 generator client {
@@ -28,8 +29,8 @@ model Request {
   active        Boolean @default(false)
   createdAt     DateTime  @default(now()) @map(name: "created_at")
   updatedAt     DateTime  @updatedAt @map(name: "updated_at")
-  user          User   @relation(fields: [userId], references: [id])
-  userId        Int
+  user          User?   @relation(fields: [userId], references: [id])
+  userId        Int? @default(2)
   ballroom      Ballroom @relation(fields: [ballroomId], references: [id])
   ballroomId    Int
 }
@@ -40,7 +41,7 @@ model Review {
   text          String
   createdAt     DateTime  @default(now()) @map(name: "created_at")
   user          User   @relation(fields: [userId], references: [id])
-  userId        Int
+  userId        Int @default(2)
 }
 
 model Ballroom {
