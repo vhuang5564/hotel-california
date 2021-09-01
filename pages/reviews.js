@@ -25,7 +25,7 @@ export default function Review({ data }) {
   const [reviews, setReviews] = useState(data);
 
   async function saveReview(e) {
-    // e.preventDefault();
+    e.preventDefault();
     const response = await fetch('/api/reviews/create', {
       body: JSON.stringify({
         rating: +e.target.rating.value,
@@ -39,7 +39,8 @@ export default function Review({ data }) {
     });
 
     const review = await response.json();
-    setReviews([...reviews, review]);
+    setReviews([review, ...reviews]);
+    e.target.reset();
   }
 
   return (
@@ -77,7 +78,7 @@ export default function Review({ data }) {
             Add Review
           </button>
         </form>
-        {/* if there are any reviews, then map over */}
+
         {reviews?.map((item) => (
           <div key={item.id} className={styles.card}>
             <span>rating: {item.rating}</span>
