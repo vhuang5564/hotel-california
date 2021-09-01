@@ -3,9 +3,6 @@ import prisma from '../lib/prisma';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Home.module.scss';
-import Sidebar from '../components/Sidebar';
-
-
 
 export const getStaticProps = async() => {
   const ballrooms = await prisma.ballroom.findMany();
@@ -16,7 +13,6 @@ export const getStaticProps = async() => {
 export default function Home({ ballrooms }) {
   return (
     <>
-      <Sidebar />
     <div className={styles.container}>
       <Head>
         <title>Main Page</title>
