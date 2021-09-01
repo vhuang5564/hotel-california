@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../../styles/Home.module.scss';
 import Ballroom from '../../components/Ballroom';
-import Sidebar from '../../components/Sidebar';
 
 const Requests = () => {
   const router = useRouter();
@@ -15,7 +14,6 @@ const Requests = () => {
 
       <body>
         <h2>Hotel California</h2>
-        <Sidebar />
         <Ballroom />
       </body>
 
