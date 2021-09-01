@@ -2,7 +2,6 @@ import styles from '../styles/Home.module.scss';
 import { useState } from 'react';
 import Head from 'next/head';
 import prisma from '../lib/prisma';
-import Sidebar from '../components/Sidebar';
 
 export async function getServerSideProps(context) {
   const reviews = await prisma.review.findMany({
@@ -47,7 +46,6 @@ export default function Review({ data }) {
       <Head>
         <title>Your Review</title>
       </Head>
-      <Sidebar />
       <main className={styles.main}>
         <form onSubmit={saveReview} className={styles.card}>
           <label htmlFor="rating">Rating</label>
