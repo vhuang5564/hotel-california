@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Home.module.scss';
 
+
 export const getStaticProps = async() => {
   const ballrooms = await prisma.ballroom.findMany();
   return { props: { ballrooms } };
