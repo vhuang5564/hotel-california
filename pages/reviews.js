@@ -2,7 +2,6 @@ import styles from '../styles/Home.module.scss';
 import { useState } from 'react';
 import Head from 'next/head';
 import prisma from '../lib/prisma';
-import Sidebar from '../components/Sidebar';
 
 export async function getServerSideProps(context) {
   const reviews = await prisma.review.findMany({
