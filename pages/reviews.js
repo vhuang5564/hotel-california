@@ -49,23 +49,21 @@ export default function Review({ data }) {
         <title>Your Review</title>
       </Head>
       <Sidebar />
-      <main className={styles.main}>
-        <form onSubmit={saveReview} className={styles.card}>
+      <main>
+        <form onSubmit={saveReview}>
           <label htmlFor="rating">Rating</label>
           <br />
-          <input
-            className={styles.card}
-            id="rating"
-            name="rating"
-            type="number"
-            placeholder="Rating 1 to 5"
-            required
-          />
+          <select id="rating" name="rating" type="number" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
           <br />
           <label htmlFor="text">Your Review</label>
           <br />
           <textarea
-            className={styles.card}
             id="text"
             name="text"
             cols="30"
@@ -74,13 +72,11 @@ export default function Review({ data }) {
             required
           />
           <br />
-          <button type="submit" className={styles.card}>
-            Add Review
-          </button>
+          <button type="submit">Add Review</button>
         </form>
 
         {reviews?.map((item) => (
-          <div key={item.id} className={styles.card}>
+          <div key={item.id} className="container">
             <span>rating: {item.rating}</span>
             <br />
             <span>by {item.user?.firstName} </span>
@@ -90,6 +86,12 @@ export default function Review({ data }) {
             <br />
             <hr />
             <span>{item.createdAt.slice(0, 10)}</span>
+            <style jsx>{`
+              .container {
+                margin: 50px;
+                padding: 10px;
+              }
+            `}</style>
           </div>
         ))}
       </main>
