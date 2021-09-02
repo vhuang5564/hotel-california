@@ -20,13 +20,15 @@ export default function Home({ ballrooms }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">hCali</a>
-        </h1>
+          <header className={styles.header}>
+            <h1 className={styles.title}>
+              Welcome to <a href="https://nextjs.org">hCali</a>
+            </h1>
 
-        <p className={styles.description}>
-          To get started, click on your meeting room or send us message in the live chat
-        </p>
+            <p className={styles.description}>
+              To get started, click on your meeting room or send us message in the live chat
+            </p>
+          </header>
     
 
         <div className={styles.grid}>
