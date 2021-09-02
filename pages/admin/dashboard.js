@@ -29,9 +29,9 @@ export default function Reviews({data }) {
       <Head>
         <title>Reviews Dashboard</title>
       </Head>
-      <section>
+      <section className={styles.container}>
       {data?.map((item) => (
-          <div key={item.id} className="container">
+          <div key={item.id} className={styles.container_inner}>
             <span>by {item.user?.firstName} </span>
             <span>{item.user?.lastName}</span>
             <br />

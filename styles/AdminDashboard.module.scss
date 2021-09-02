@@ -1,0 +1,15 @@
+.container {
+  display: list-item;
+  text-align: -webkit-center;
+  padding-top: 100px;
+
+  &_inner {
+    background-color: aliceblue;
+    width: 80%;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    font-family: sans-serif;
+  }
+}
