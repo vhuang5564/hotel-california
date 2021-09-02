@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import prisma from '../../lib/prisma';
+import styles from '../../styles/AdminDashboard.module.scss';
 
 export async function getStaticProps() {
   
