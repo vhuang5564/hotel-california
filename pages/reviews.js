@@ -47,7 +47,6 @@ export default function Review({ data }) {
       <Head>
         <title>Your Review</title>
       </Head>
-      <Sidebar />
       <main>
         <form onSubmit={saveReview}>
           <label htmlFor="rating">Rating</label>
