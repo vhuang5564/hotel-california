@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import prisma from '../../lib/prisma';
 import styles from '../../styles/AdminDashboard.module.scss';
+import PhoneIcon from '@material-ui/icons/Phone';
 
 export async function getStaticProps() {
   
@@ -22,7 +23,25 @@ export async function getStaticProps() {
     revalidate: 1,
   };
 }
+
+
 export default function Reviews({data }) {
+
+
+  console.log(data[0].text); // grand.jpg
+
+  const request = (text) => {
+    switch (text) {
+    case 'Need help with audio visual\n' :
+      console.log('success!');
+      break;
+    default:
+      console.log('failure');
+    }
+  };
+
+  request(data[0].text);
+
   return (
     <>
     
@@ -30,12 +49,15 @@ export default function Reviews({data }) {
         <title>Reviews Dashboard</title>
       </Head>
       <section className={styles.container}>
-      {data?.map((item) => (
-          <div key={item.id} className={styles.container_inner}>
+        {data?.map((item) => (
+          <div key={item.id} className={styles.container_inner}
+            style={{
+              backgroundImage: `url(/${item.ballroom.imageUrl})`
+            }}>
             <span>by {item.user?.firstName} </span>
             <span>{item.user?.lastName}</span>
             <br />
-            <span> {item.user?.phoneNumber}</span>
+            <span>{item.user?.phoneNumber} <PhoneIcon/></span>
             <br />
             <span> {item.text}</span>
             <span> in {item.ballroom?.name}</span>
@@ -51,6 +73,6 @@ export default function Reviews({data }) {
       `}</style>
       </section>
 
-      </>
-  )
+    </>
+  );
 }
