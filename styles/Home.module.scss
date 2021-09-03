@@ -15,6 +15,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  background-color: aliceblue;
 }
 
 .footer {
@@ -53,11 +54,6 @@
 .title,
 .description {
   text-align: center;
-}
-
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
 }
 
 .code {
@@ -142,9 +138,18 @@
   color: white;
   width: 100%;
   z-index: 2;
-  background-color: #2d333b;
+  background-color: #41586d;
+  position: relative;
+
+  .description {
+    line-height: 1.5;
+    font-size: 1.5rem;
+    background: #212529;
+  }
 }
 
 .hotel_image {
-
+  position: absolute;
+  left: 230px;
+  z-index: -1;
 }

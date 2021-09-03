@@ -22,6 +22,7 @@ export default function Home({ ballrooms }) {
       </Head>
       <main className={styles.main}>
           <header className={styles.header}>
+            <div className={styles.hotel_image}><Image src="/hotel.png" alt="hotel" height="100" width="100"/> </div>
             <h1 className={styles.title}>
               Welcome to <a href="https://nextjs.org">hCali</a>
             </h1>
