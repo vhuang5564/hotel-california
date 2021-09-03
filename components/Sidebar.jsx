@@ -7,7 +7,7 @@ import AppsIcon from '@material-ui/icons/Apps';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import PoolIcon from '@material-ui/icons/Pool';
 import AddIcCallIcon from '@material-ui/icons/AddIcCall';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false);
@@ -18,6 +18,8 @@ export default function Sidebar() {
     setSidebar(!sidebar);
     console.log(sidebar);
   };
+
+  
 
   return (
     // Shows/hides sidebar if state is true/false
