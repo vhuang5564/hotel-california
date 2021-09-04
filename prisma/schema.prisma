@@ -16,8 +16,9 @@ model User {
   firstName     String
   lastName      String
   email         String   @unique
-  phoneNumber   Int
+  phoneNumber   String @default("17809147290")
   isAdmin       Boolean @default(false)
+  password      String @default("1234")
   requests      Request[]
   reviews       Review[]
   @@map(name: "users")

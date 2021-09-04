@@ -1,11 +1,12 @@
 import '../styles/globals.css';
-import Sidebar from '../components/Sidebar';
+import { AuthProvider } from '../context/AuthContext';
 
 
 const MyApp = ({ Component, pageProps }) => {
   return <>
-    <Sidebar />
+    <AuthProvider>
     <Component {...pageProps} />;
+    </AuthProvider>
   </>;
 };
 
