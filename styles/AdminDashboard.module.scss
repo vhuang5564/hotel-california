@@ -2,15 +2,40 @@
   display: list-item;
   text-align: -webkit-center;
   padding-top: 100px;
+  position: relative;
+  height: 100%;
 
   &_inner {
-    width: 80%;
+    background-color: white;
+    width: 50%;
     border: 1px solid;
     padding: 5px;
     border-radius: 10px;
     margin: 5px;
     font-family: sans-serif;
-    color: white;
+    color: black;
     background-size: cover;
   }
+
+  &_icon {
+    color: black;
+    font-size: xxx-large !important;
+    position: absolute;
+    left: 40%;
+  }
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: #e07800;
+  overflow: hidden;
+  margin-top: 50px;
+  color: white;
+}
+
+.total {
+  font-size: larger;
+  margin-top: 10px;
 }
