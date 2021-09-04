@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Home.module.scss';
 
+
 export const getStaticProps = async() => {
   const ballrooms = await prisma.ballroom.findMany();
   return { props: { ballrooms } };
@@ -20,6 +21,18 @@ export default function Home({ ballrooms }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+
+          <header className={styles.header}>
+            <div className={styles.hotel_image}><Image src="/hotel.png" alt="hotel" height="100" width="100"/> </div>
+            <h1 className={styles.title}>
+              Welcome to <a href="https://nextjs.org">hCali</a>
+            </h1>
+
+            <p className={styles.description}>
+              To get started, click on your meeting room or send us message in the live chat
+            </p>
+          </header>
+
     
 
         <div className={styles.grid}>
