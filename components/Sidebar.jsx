@@ -11,7 +11,7 @@ import PoolIcon from '@material-ui/icons/Pool';
 import styles from '../styles/Sidebar.module.scss';
 
 
-export default function SimpleSlide() {
+export default function Sidebar() {
   const [checked, setChecked] = React.useState(false);
 
   const handleChange = () => {

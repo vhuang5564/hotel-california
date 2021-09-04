@@ -5,7 +5,6 @@
 }
 
 .ballroom {
-  background-color: aliceblue !important; // delete this later
   background-size: cover; // or 100% 100% to fill
   background-repeat: no-repeat;
   background-position: center;
@@ -32,5 +31,6 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   width: 95%;
+  background-color: white;
 }
 
