@@ -1,9 +1,20 @@
 .grid_container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  grid-column-gap: 45px;
+  grid-template-columns: repeat(3, minmax(360px, 1fr));
+  grid-column-gap: 1rem;
+  margin: 5rem;
 }
 
+@media(max-width:940px){
+  .grid_container {
+     grid-template-columns: repeat(2, minmax(360px, 1fr));
+  }
+}
+@media(max-width:640px){
+  .grid_container {
+     grid-template-columns: repeat(1, minmax(360px, 1fr));
+  }
+}
 .ballroom {
   background-color: aliceblue !important; // delete this later
   background-size: cover; // or 100% 100% to fill
@@ -11,6 +22,8 @@
   background-position: center;
   height: 10rem;
   width: 100%;
+  margin-top: 1rem !important;
+  // filter: brightness(0.8);
 }
 
 .ballroom:focus {
@@ -18,9 +31,11 @@
 }
 
 .wording {
-  font-size: large;
+  font-size: 170%;
+  text-transform: capitalize;
   display: flex;
   justify-content: center;
+  color: white;
 }
 
 .card {
@@ -34,3 +49,7 @@
   width: 95%;
 }
 
+.overlay {
+  filter: brightness(0.8);
+  
+}
