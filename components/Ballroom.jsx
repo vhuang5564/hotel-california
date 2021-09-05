@@ -82,7 +82,7 @@ export default function Ballroom() {
   return (
     <section className={styles.grid_container}>
       {images.map((image) => (
-        <div key={image.title} >
+        <div key={image.title}>
           <Button
             className={styles.ballroom}
             variant="outlined"
