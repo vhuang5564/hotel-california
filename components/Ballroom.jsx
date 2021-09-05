@@ -12,8 +12,21 @@ import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import AddIcCallIcon from '@material-ui/icons/AddIcCall';
 import BathtubIcon from '@material-ui/icons/Bathtub';
 import { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Ballroom() {
+  
+  const notify = () => toast.success('Your request has been sent!', {
+    position: "top-center",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: false,
+    progress: undefined,
+  });
+
   const [images, setImages] = useState([
     {
       url: '/all_areas.jpg',
@@ -109,9 +122,22 @@ export default function Ballroom() {
               style={{
                 backgroundImage: `url(${image.url})`,
               }}
-              onClick={() => request(image)}
+              onClick={notify}
+              // onClick={() => request(image)}
               disabled={image.isDisabled}
             ></Button>
+
+            <ToastContainer
+              position="top-center"
+              autoClose={2000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable={false}
+              pauseOnHover={false}
+            />
           </div>
         )
       )}
