@@ -27,13 +27,13 @@ export default function Ballroom() {
     {
       url: '/bw_palm_leaf.png',
       title: 'SALES COORDINATOR',
-      icon: <AppsIcon />,
+      icon: null,
       isDisabled: true
     },
     {
       url: '/palm_leaf.jpg',
       title: 'AUDIO VISUAL HELP',
-      icon: <AppsIcon />,
+      icon: null,
       isDisabled: false
     },
     {
