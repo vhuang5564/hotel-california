@@ -24,7 +24,18 @@
   margin-top: 1rem !important;
   
 }
-
+.ballroom::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.ballroom * {
+  z-index: 5;
+}
 .ballroom:focus {
   opacity: 0.5;
 }
