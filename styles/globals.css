@@ -1,4 +1,4 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 html,
 body {
   padding: 0;
@@ -14,4 +14,54 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: red;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  font: inherit;
+  font-size: 13px;
+  background: #000;
+  color: #fff !important;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  opacity: 0.8;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon svg {
+  margin-right: 5px;
 }

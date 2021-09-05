@@ -3,6 +3,7 @@ import prisma from '../lib/prisma';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Home.module.scss';
+import Layout from '@/components/Layout.user';
 
 
 export const getStaticProps = async() => {
@@ -14,15 +15,16 @@ export const getStaticProps = async() => {
 export default function Home({ ballrooms }) {
   return (
     <>
-    <div className={styles.container}>
-      <Head>
+    <Layout>
+    {/* <div className={styles.container}> */}
+      {/* <Head>
         <title>Main Page</title>
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={styles.main}>
+      </Head> */}
+      {/* <main className={styles.main}> */}
 
-          <header className={styles.header}>
+          {/* <header className={styles.header}>
             <div className={styles.hotel_image}><Image src="/hotel.png" alt="hotel" height="100" width="100"/> </div>
             <h1 className={styles.title}>
               Welcome to <a href="https://nextjs.org">hCali</a>
@@ -31,7 +33,7 @@ export default function Home({ ballrooms }) {
             <p className={styles.description}>
               To get started, click on your meeting room or send us message in the live chat
             </p>
-          </header>
+          </header> */}
 
     
 
@@ -40,8 +42,7 @@ export default function Home({ ballrooms }) {
           <Link key={ballroom.id} href="/[ballroom]/requests" as={`/${ballroom.name}/requests`} >
             {/* <Link href="/" key={ballroom.id}> */}
               <a className={styles.card}>
-                <h2>{ballroom.name} &rarr;</h2>
-                <p>Click to check instant request options</p>
+                <h2>{ballroom.name}</h2>
                 <div
                   className={styles.background}
                   style={{
@@ -52,22 +53,10 @@ export default function Home({ ballrooms }) {
             </Link>
           ))}
         </div>
-      </main>
+      {/* </main> */}
 
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+    {/* </div> */}
+    </Layout>
     </>
   );
 }
