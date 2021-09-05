@@ -11,90 +11,136 @@ import PoolIcon from '@material-ui/icons/Pool';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import AddIcCallIcon from '@material-ui/icons/AddIcCall';
 import BathtubIcon from '@material-ui/icons/Bathtub';
+import { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Ballroom() {
-  const images = [
+  
+  const notify = () => toast.success('Your request has been sent!', {
+    position: "top-center",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: false,
+    progress: undefined,
+  });
+
+  const [images, setImages] = useState([
     {
-      url: '/palm_leaf.jpg',
+      url: '/all_areas.jpg',
       title: 'COFFEE SERVICE',
       icon: <AppsIcon />,
+      isDisabled: true
     },
     {
-      url: '/bw_palm_leaf.png',
+      url: '/cloche.jpg',
       title: 'SALES REPRESENTATIVE REQUIRED',
       icon: <LocalDiningIcon />,
+      isDisabled: true
     },
     {
-      url: '/palm_leaf.jpg',
+      url: '/restuarant.webp',
       title: 'ASSISTANCE WITH AUDIO VISUAL',
       icon: <MenuBookIcon />,
+      isDisabled: false
     },
     {
-      url: '/light_bg.png',
+      url: '/spa.jpg',
       title: 'COPY OF THE BANQUET EVENT ORDER',
       icon: <BathtubIcon />,
+      isDisabled: false
     },
     {
-      url: '/light_bg.png',
+      url: '/amenities.jpg',
       title: 'NEW MEETING ROOM KEY',
       icon: <PoolIcon />,
+      isDisabled: false
     },
     {
-      url: '/light_bg.png',
+      url: '/desk.jpg',
       title: 'RESTOCK BOTTLED WATER',
       icon: <MoodIcon />,
+      isDisabled: false
     },
     {
-      url: '/bw_palm_leaf.png',
+      url: '/service.jpg',
       title: 'ASSISTANCE MAKING XEROX COPIES',
       icon: <AddIcCallIcon />,
+      isDisabled: false
     },
     {
-      url: '/palm_leaf.jpg',
-      title: 'ADJUST ROOM TEMTERATURE',
+      url: '/stall.jpg_fit=scale',
+      title: 'WHEEL CART',
       icon: <StreetviewIcon />,
+      isDisabled: false
     },
     {
-      url: '/bw_palm_leaf.png',
+      url: 'bus.jpg',
       title: 'EXTRA CHAIRS',
       icon: <SubwayIcon />,
+      isDisabled: false
     },
     {
-      url: '/light_bg.png',
+      url: 'concierge.jpg',
       title: 'MEETING ROOM REFRESH',
       icon: <AssignmentIndIcon />,
+      isDisabled: false
     },
     {
-      url: '/light_bg.png',
+      url: 'valet.jpg',
       title: 'WET FLOOR',
       icon: <TimeToLeaveIcon />,
+      isDisabled: false
     },
     {
-      url: '/light_bg.png',
+      url: 'other.png',
       title: 'OTHER REQUESTS',
       icon: <AppsIcon />,
-    },
-  ];
+      isDisabled: false
+    }
+  ]);
 
   const request = (image) => {
-    console.log(image.title); //object title
+    // console.log(image.title); //object title
+    // console.log(image.isDisabled);
+    console.log(image.isDisabled);
   };
 
   return (
     <section className={styles.grid_container}>
-      {images.map((image) => (
-        <div key={image.title} >
-          <Button
-            className={styles.ballroom}
-            variant="outlined"
-            style={{
-              backgroundImage: `url(${image.url})`,
-            }}
-            onClick={() => request(image)}
-          >
-            <h2 className={styles.wording}>{image.title}</h2>
-          </Button>
-        </div>
-      ))}
+      {images.map((image) =>
+        (
+          <div key={image.title} className={styles.card}>
+            <h2 className={styles.wording}>
+              {image.title} {image.icon}
+            </h2>
+            <Button
+              className={styles.ballroom}
+              variant="outlined"
+              style={{
+                backgroundImage: `url(${image.url})`,
+              }}
+              onClick={notify}
+              // onClick={() => request(image)}
+              disabled={image.isDisabled}
+            ></Button>
+
+            <ToastContainer
+              position="top-center"
+              autoClose={2000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable={false}
+              pauseOnHover={false}
+            />
+          </div>
+        )
+      )}
     </section>
   );
 }
