@@ -7,28 +7,31 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Ballroom() {
   
-  const notify = () => toast.success('Your request has been sent!', {
-    position: "top-center",
-    autoClose: 2000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: false,
-    draggable: false,
-    progress: undefined,
-  });
+  const request = (image) => {
+    console.log(image);
+    toast.success('Your request has been sent!', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+    });
+  };
 
   const [images, setImages] = useState([
     {
       url: '/palm_leaf.jpg',
       title: 'COFFEE SERVICE',
       icon: <AppsIcon />,
-      isDisabled: true
+      isDisabled: false
     },
     {
       url: '/bw_palm_leaf.png',
       title: 'SALES COORDINATOR',
       icon: null,
-      isDisabled: true
+      isDisabled: false
     },
     {
       url: '/palm_leaf.jpg',
@@ -92,12 +95,6 @@ export default function Ballroom() {
     }
   ]);
 
-  const request = (image) => {
-    // console.log(image.title); //object title
-    // console.log(image.isDisabled);
-    console.log(image.isDisabled);
-  };
-
   return (
     <section className={styles.grid_container}>
       {images.map((image) =>
@@ -112,8 +109,7 @@ export default function Ballroom() {
               style={{
                 backgroundImage: `url(${image.url})`,
               }}
-              onClick={notify}
-              // onClick={() => request(image)}
+              onClick={() => request(image)}
               disabled={image.isDisabled}
             >
               <a href="#"><h2 className={styles.wording}>{image.title}</h2></a>
