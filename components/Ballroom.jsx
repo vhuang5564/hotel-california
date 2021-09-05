@@ -5,27 +5,6 @@ import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export async function getStaticProps() {
-  
-  const requests = await prisma.request.findMany({
-    include: {
-      ballroom: true,
-      user: true,
-    },
-    orderBy: {
-      createdAt: 'desc',
-    },
-  });
-  // Had to do the json trick to get the date obj that is not serializable and will error out if not stringified
-  
-  return {
-    props: {
-      data: JSON.parse(JSON.stringify(requests)),
-    },
-    revalidate: 1,
-  };
-}
-
 export default function Ballroom() {
   
   const request = (image) => {
