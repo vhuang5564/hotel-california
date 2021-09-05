@@ -1,62 +1,62 @@
 import Button from '@material-ui/core/Button';
 import styles from '../styles/Ballroom.module.scss';
 import AppsIcon from '@material-ui/icons/Apps';
-
+import prisma from '../lib/prisma'
 export default function Ballroom() {
   const images = [
     {
       url: '/bw_palm_leaf.png',
-      title: 'PROVIDE COFFEE SERVICE',
+      title: 'COFFEE SERVICE',
       icon: <AppsIcon />,
     },
     {
       url: '/bw_palm_leaf.png',
-      title: 'SALES REPRESENTATIVE REQUIRED',
+      title: 'SALES COORDINATOR',
       icon: <AppsIcon />,
     },
     {
       url: '/bw_palm_leaf.png',
-      title: 'ASSIST WITH AUDIO VISUAL',
+      title: 'AUDIO VISUAL HELP',
       icon: <AppsIcon />,
     },
     {
       // url: '/palm_leaf.jpg',
-      title: 'EMAIL THE BANQUET EVENT ORDER',
+      title: 'CONTRACT COPY',
       icon: <AppsIcon />,
     },
     {
       // url: '/palm_leaf.jpg',
-      title: 'PROVIDE A NEW MEETING ROOM KEY',
+      title: 'NEW ROOM KEY',
       icon: <AppsIcon />,
     },
     {
       // url: '/palm_leaf.jpg',
-      title: 'RESTOCK BOTTLED WATER',
+      title: 'BOTTLED WATER',
       icon: <AppsIcon />,
     },
     {
       url: '/bw_palm_leaf.png',
-      title: 'ASSIST MAKING XEROX COPIES',
+      title: 'ACCESS TO XEROX',
       icon: <AppsIcon />,
     },
     {
       url: '/bw_palm_leaf.png',
-      title: 'ADJUST ROOM TEMTERATURE',
+      title: 'ADJUST SETUP',
       icon: <AppsIcon />,
     },
     {
       url: '/bw_palm_leaf.png',
-      title: 'BRING EXTRA CHAIRS',
+      title: 'EXTRA CHAIRS',
       icon: <AppsIcon />,
     },
     {
       // url: '/palm_leaf.jpg',
-      title: 'REFRESH THE MEETING ROOM',
+      title: 'ROOM REFRESH',
       icon: <AppsIcon />,
     },
     {
       // url: '/palm_leaf.jpg',
-      title: 'BANQUET CAPTAIN REQUIRED',
+      title: 'BANQUET CAPTAIN',
       icon: <AppsIcon />,
     },
     {

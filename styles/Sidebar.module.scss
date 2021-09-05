@@ -6,7 +6,6 @@
   // padding: 0.5em;
   box-sizing: border-box;
   overflow: hidden;
-  position: fixed;
   // z-index: 3;
   position: fixed !important;
   height: 100%;
@@ -23,8 +22,6 @@
     font-family: inherit;
     height: 7rem;
     width: 100%;
-    
-    
   }
 
   button:hover {
@@ -52,7 +49,7 @@
   // opacity: 0.5;
   color: red !important;
   transition: transform .2s;
-  transform: rotateZ(180deg) translateX(-8rem);
+  transform: rotateZ(180deg) translateX(-10rem);
 }
 @media(max-width:992px){
   .active {

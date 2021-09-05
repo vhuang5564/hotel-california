@@ -1,11 +1,13 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import styles from "../styles/chat.module.css"
+import Layout from '@/components/Layout.user';
 
 const AblyChatComponent = dynamic(() => import('../components/AblyChatComponent'), { ssr: false });
 
 export default function Home() {
   return (
+    <Layout>
     <div className="container">
       <Head>
         <title>Chat window</title>
@@ -28,6 +30,7 @@ export default function Home() {
         ...        
       `}</style>
     </div>
+    </Layout>
   )
 }
 

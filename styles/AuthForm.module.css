@@ -3,6 +3,7 @@
   margin: auto;
   padding: 30px;
   box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.52);
+  margin-bottom: 45vh;;
 }
 
 .auth label {
