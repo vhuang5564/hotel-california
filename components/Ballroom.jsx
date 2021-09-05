@@ -1,16 +1,6 @@
 import Button from '@material-ui/core/Button';
 import styles from '../styles/Ballroom.module.scss';
 import AppsIcon from '@material-ui/icons/Apps';
-import LocalDiningIcon from '@material-ui/icons/LocalDining';
-import StreetviewIcon from '@material-ui/icons/Streetview';
-import MenuBookIcon from '@material-ui/icons/MenuBook';
-import MoodIcon from '@material-ui/icons/Mood';
-import SubwayIcon from '@material-ui/icons/Subway';
-import TimeToLeaveIcon from '@material-ui/icons/TimeToLeave';
-import PoolIcon from '@material-ui/icons/Pool';
-import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
-import AddIcCallIcon from '@material-ui/icons/AddIcCall';
-import BathtubIcon from '@material-ui/icons/Bathtub';
 import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
