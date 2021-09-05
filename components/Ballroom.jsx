@@ -11,72 +11,88 @@ import PoolIcon from '@material-ui/icons/Pool';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import AddIcCallIcon from '@material-ui/icons/AddIcCall';
 import BathtubIcon from '@material-ui/icons/Bathtub';
+import { useState, useEffect } from 'react';
+
 export default function Ballroom() {
-  const images = [
+  const [images, setImages] = useState([
     {
       url: '/all_areas.jpg',
       title: 'COFFEE SERVICE',
-      icon: <AppsIcon />
+      icon: <AppsIcon />,
+      isDisabled: true
     },
     {
       url: '/cloche.jpg',
       title: 'SALES REPRESENTATIVE REQUIRED',
-      icon: <LocalDiningIcon />
+      icon: <LocalDiningIcon />,
+      isDisabled: true
     },
     {
       url: '/restuarant.webp',
       title: 'ASSISTANCE WITH AUDIO VISUAL',
-      icon: <MenuBookIcon />
+      icon: <MenuBookIcon />,
+      isDisabled: false
     },
     {
       url: '/spa.jpg',
       title: 'COPY OF THE BANQUET EVENT ORDER',
-      icon: <BathtubIcon />
+      icon: <BathtubIcon />,
+      isDisabled: false
     },
     {
       url: '/amenities.jpg',
       title: 'NEW MEETING ROOM KEY',
-      icon: <PoolIcon />
+      icon: <PoolIcon />,
+      isDisabled: false
     },
     {
       url: '/desk.jpg',
       title: 'RESTOCK BOTTLED WATER',
-      icon: <MoodIcon />
+      icon: <MoodIcon />,
+      isDisabled: false
     },
     {
       url: '/service.jpg',
       title: 'ASSISTANCE MAKING XEROX COPIES',
-      icon: <AddIcCallIcon />
+      icon: <AddIcCallIcon />,
+      isDisabled: false
     },
     {
       url: '/stall.jpg_fit=scale',
       title: 'WHEEL CART',
-      icon: <StreetviewIcon />
+      icon: <StreetviewIcon />,
+      isDisabled: false
     },
     {
       url: 'bus.jpg',
       title: 'EXTRA CHAIRS',
-      icon: <SubwayIcon />
+      icon: <SubwayIcon />,
+      isDisabled: false
     },
     {
       url: 'concierge.jpg',
       title: 'MEETING ROOM REFRESH',
-      icon: <AssignmentIndIcon />
+      icon: <AssignmentIndIcon />,
+      isDisabled: false
     },
     {
       url: 'valet.jpg',
       title: 'WET FLOOR',
-      icon: <TimeToLeaveIcon />
+      icon: <TimeToLeaveIcon />,
+      isDisabled: false
     },
     {
       url: 'other.png',
       title: 'OTHER REQUESTS',
-      icon: <AppsIcon />
+      icon: <AppsIcon />,
+      isDisabled: false
     }
-  ];
+  ]);
 
   const request = (image) => {
-    console.log(image.title); //object title
+    // console.log(image.title); //object title
+    // console.log(image.isDisabled);
+    console.log(image.isDisabled);
   };
 
   return (
@@ -94,6 +110,7 @@ export default function Ballroom() {
                 backgroundImage: `url(${image.url})`,
               }}
               onClick={() => request(image)}
+              disabled={image.isDisabled}
             ></Button>
           </div>
         )
