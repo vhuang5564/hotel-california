@@ -14,65 +14,65 @@ import BathtubIcon from '@material-ui/icons/Bathtub';
 export default function Ballroom() {
   const images = [
     {
-      url: '/all_areas.jpg',
+      url: '/palm_leaf.jpg',
       title: 'COFFEE SERVICE',
-      icon: <AppsIcon />
+      icon: <AppsIcon />,
     },
     {
-      url: '/cloche.jpg',
+      url: '/bw_palm_leaf.png',
       title: 'SALES REPRESENTATIVE REQUIRED',
-      icon: <LocalDiningIcon />
+      icon: <LocalDiningIcon />,
     },
     {
-      url: '/restuarant.webp',
+      url: '/palm_leaf.jpg',
       title: 'ASSISTANCE WITH AUDIO VISUAL',
-      icon: <MenuBookIcon />
+      icon: <MenuBookIcon />,
     },
     {
-      url: '/spa.jpg',
+      url: '/light_bg.png',
       title: 'COPY OF THE BANQUET EVENT ORDER',
-      icon: <BathtubIcon />
+      icon: <BathtubIcon />,
     },
     {
-      url: '/amenities.jpg',
+      url: '/light_bg.png',
       title: 'NEW MEETING ROOM KEY',
-      icon: <PoolIcon />
+      icon: <PoolIcon />,
     },
     {
-      url: '/desk.jpg',
+      url: '/light_bg.png',
       title: 'RESTOCK BOTTLED WATER',
-      icon: <MoodIcon />
+      icon: <MoodIcon />,
     },
     {
-      url: '/service.jpg',
+      url: '/bw_palm_leaf.png',
       title: 'ASSISTANCE MAKING XEROX COPIES',
-      icon: <AddIcCallIcon />
+      icon: <AddIcCallIcon />,
     },
     {
-      url: '/stall.jpg_fit=scale',
-      title: 'WHEEL CART',
-      icon: <StreetviewIcon />
+      url: '/palm_leaf.jpg',
+      title: 'ADJUST ROOM TEMTERATURE',
+      icon: <StreetviewIcon />,
     },
     {
-      url: 'bus.jpg',
+      url: '/bw_palm_leaf.png',
       title: 'EXTRA CHAIRS',
-      icon: <SubwayIcon />
+      icon: <SubwayIcon />,
     },
     {
-      url: 'concierge.jpg',
+      url: '/light_bg.png',
       title: 'MEETING ROOM REFRESH',
-      icon: <AssignmentIndIcon />
+      icon: <AssignmentIndIcon />,
     },
     {
-      url: 'valet.jpg',
+      url: '/light_bg.png',
       title: 'WET FLOOR',
-      icon: <TimeToLeaveIcon />
+      icon: <TimeToLeaveIcon />,
     },
     {
-      url: 'other.png',
+      url: '/light_bg.png',
       title: 'OTHER REQUESTS',
-      icon: <AppsIcon />
-    }
+      icon: <AppsIcon />,
+    },
   ];
 
   const request = (image) => {
@@ -81,23 +81,20 @@ export default function Ballroom() {
 
   return (
     <section className={styles.grid_container}>
-      {images.map((image) =>
-        (
-          <div key={image.title} className={styles.card}>
-            <h2 className={styles.wording}>
-              {image.title} {image.icon}
-            </h2>
-            <Button
-              className={styles.ballroom}
-              variant="outlined"
-              style={{
-                backgroundImage: `url(${image.url})`,
-              }}
-              onClick={() => request(image)}
-            ></Button>
-          </div>
-        )
-      )}
+      {images.map((image) => (
+        <div key={image.title} >
+          <Button
+            className={styles.ballroom}
+            variant="outlined"
+            style={{
+              backgroundImage: `url(${image.url})`,
+            }}
+            onClick={() => request(image)}
+          >
+            <h2 className={styles.wording}>{image.title}</h2>
+          </Button>
+        </div>
+      ))}
     </section>
   );
 }
