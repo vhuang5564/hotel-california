@@ -5,10 +5,30 @@ import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+export async function getStaticProps() {
+  
+  const requests = await prisma.request.findMany({
+    include: {
+      ballroom: true,
+      user: true,
+    },
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
+  // Had to do the json trick to get the date obj that is not serializable and will error out if not stringified
+  
+  return {
+    props: {
+      data: JSON.parse(JSON.stringify(requests)),
+    },
+    revalidate: 1,
+  };
+}
+
 export default function Ballroom() {
   
   const request = (image) => {
-    console.log(image);
     toast.success('Your request has been sent!', {
       position: "top-center",
       autoClose: 2000,
@@ -18,6 +38,8 @@ export default function Ballroom() {
       draggable: false,
       progress: undefined,
     });
+
+    console.log(image.title);
   };
 
   const [images, setImages] = useState([
@@ -100,9 +122,6 @@ export default function Ballroom() {
       {images.map((image) =>
         (
           <div key={image.title} className={styles.card}>
-            <h2 className={styles.wording}>
-              {image.title} {image.icon}
-            </h2>
             <Button
               className={styles.ballroom}
               variant="outlined"
