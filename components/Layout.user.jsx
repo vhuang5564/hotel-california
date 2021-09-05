@@ -21,6 +21,7 @@ export default function Layout({ title, keywords, description, children }) {
 
       <Header />
 
+      {/* show the Showcase only on the home page */}
       {router.pathname === '/' && <Showcase />}
 
       <div className={styles.container}>{children}</div>
