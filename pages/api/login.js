@@ -33,7 +33,7 @@ export default async function loginHandler(req, res) {
         })
       );
 
-      res.status(200).json({ message: 'Welcome back to the app' });
+      res.status(200).json({ message: `Welcome back to the app ${jwt}` });
     } else {
       res.status(401).json({ message: 'Wrong credentials' });
     }

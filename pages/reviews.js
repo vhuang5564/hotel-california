@@ -1,8 +1,8 @@
-import styles from '../styles/Home.module.scss';
+import styles from '@/styles/reviews.module.css';
 import { useState } from 'react';
-import Head from 'next/head';
+import Layout from '@/components/Layout.user';
 import prisma from '../lib/prisma';
-import Sidebar from '../components/Sidebar'
+
 export async function getServerSideProps(context) {
   const reviews = await prisma.review.findMany({
     include: {
@@ -22,7 +22,7 @@ export async function getServerSideProps(context) {
 
 export default function Review({ data }) {
   const [reviews, setReviews] = useState(data);
-
+  
   async function saveReview(e) {
     e.preventDefault();
     const response = await fetch('/api/reviews/create', {
@@ -36,63 +36,76 @@ export default function Review({ data }) {
       },
       method: 'POST',
     });
-
+    
     const review = await response.json();
     setReviews([review, ...reviews]);
     e.target.reset();
   }
+  
 
   return (
-    <>
-      <Head>
-        <title>Your Review</title>
-      </Head>
-      <main>
-        <form onSubmit={saveReview}>
-          <label htmlFor="rating">Rating</label>
-          <br />
-          <select id="rating" name="rating" type="number" required>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-          <br />
-          <label htmlFor="text">Your Review</label>
-          <br />
-          <textarea
-            id="text"
-            name="text"
-            cols="30"
-            rows="10"
-            placeholder="Your review here... 🏄"
-            required
-          />
-          <br />
-          <button type="submit">Add Review</button>
-        </form>
-
-        {reviews?.map((item) => (
-          <div key={item.id} className="container">
-            <span>rating: {item.rating}</span>
-            <br />
-            <span>by {item.user?.firstName} </span>
-            <span>{item.user?.lastName}</span>
-            <br />
-            <span> {item.text}</span>
-            <br />
-            <hr />
-            <span>{item.createdAt.slice(0, 10)}</span>
-            <style jsx>{`
-              .container {
-                margin: 50px;
-                padding: 10px;
-              }
-            `}</style>
+    <div className={styles.hero}>
+      <Layout title="Hotel California | Leave A Review">
+        <main>
+          <div className={styles.auth}>
+            <h1>How Did We Do Today?</h1>
+            <form onSubmit={saveReview}>
+              <div>
+                <label htmlFor="rating">Rating</label>
+                <select id="rating" name="rating" type="number" required>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="text">Your Review</label>
+                <textarea
+                  className={styles.item}
+                  id="text"
+                  name="text"
+                  // type="text"
+                  cols="30"
+                  rows="10"
+                  placeholder="Your review here... 🏄"
+                  required
+                />
+              </div>
+              <input type="submit" value="Post My Review" className="btn" />
+            </form>
           </div>
-        ))}
-      </main>
-    </>
+          <section>
+            {reviews?.map((item) => (
+              <div key={item.id} className={styles.item}>
+                <div>
+                  <div className={styles.rating}>rating: {item.rating}</div>
+                  <span
+                    className={styles.rating}
+                    style={{
+                      fontFamily: "'Allison', cursive",
+                      fontSize: '170%',
+                      color: 'red',
+                    }}
+                  >
+                    by {item.user?.firstName} {item.user?.lastName}
+                  </span>
+                  <div className={styles.rating}>
+                    {new Date(item.createdAt).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </div>
+                </div>
+
+                <div className={styles.rating}>{item.text}</div>
+              </div>
+            ))}
+          </section>
+        </main>
+      </Layout>
+    </div>
   );
 }

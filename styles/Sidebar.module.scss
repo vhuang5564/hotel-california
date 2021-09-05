@@ -1,33 +1,61 @@
 .sidebar {
   display: flex !important;
   background-color: lightgray !important;
-  border-radius: 0.5em !important;
-  padding: 0.5em;
+  opacity: 0.97;
+  // border-radius: 0.5em !important;
+  // padding: 0.5em;
   box-sizing: border-box;
   overflow: hidden;
-  position: fixed;
-  z-index: 3;
+  // z-index: 3;
   position: fixed !important;
   height: 100%;
+  width: 16%;
   flex-direction: column;
+  z-index: 6;
 
   button {
     display: flex;
-    padding: 1em;
-    justify-content: space-between;
-    align-items: flex-end;
+    padding: 1.5em;
+    justify-content: left;
+    align-items: center;
     font-size: 16px;
-    font-family: unset;
+    font-family: inherit;
+    height: 7rem;
+    width: 100%;
   }
 
   button:hover {
-    opacity: 1 !important;
+    color: white;
+    opacity: 2 !important;
   }
 }
 
 .icon {
   position: fixed !important;
-  z-index: 4;
+  z-index: 7;
   top: 50%;
-  opacity: 0.5;
+  // opacity: 0.5;
+  color: red !important;
+  transition: transform .2s;
+}
+.sidebar p {
+  margin: 8px;
+}
+
+.active {
+  position: fixed !important;
+  z-index: 7;
+  top: 50%;
+  // opacity: 0.5;
+  color: red !important;
+  transition: transform .2s;
+  transform: rotateZ(180deg) translateX(-10rem);
+}
+@media(max-width:992px){
+  .active {
+    transform:  translateX(-0.5rem) !important;
+  }
+  .sidebar {
+    // overflow: hidden;
+  }
 }
