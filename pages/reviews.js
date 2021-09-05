@@ -1,8 +1,10 @@
-import styles from '../styles/Home.module.scss';
+import styles from '@/styles/Item.module.css';
+import Image from 'next/image';
 import { useState } from 'react';
 import Head from 'next/head';
+import Layout from '@/components/Layout.user';
 import prisma from '../lib/prisma';
-import Sidebar from '../components/Sidebar'
+import Sidebar from '../components/Sidebar';
 export async function getServerSideProps(context) {
   const reviews = await prisma.review.findMany({
     include: {
@@ -43,10 +45,7 @@ export default function Review({ data }) {
   }
 
   return (
-    <>
-      <Head>
-        <title>Your Review</title>
-      </Head>
+    <Layout title="Hotel California | Leave A Review">
       <main>
         <form onSubmit={saveReview}>
           <label htmlFor="rating">Rating</label>
@@ -62,6 +61,7 @@ export default function Review({ data }) {
           <label htmlFor="text">Your Review</label>
           <br />
           <textarea
+            className={styles.item}
             id="text"
             name="text"
             cols="30"
@@ -74,25 +74,25 @@ export default function Review({ data }) {
         </form>
 
         {reviews?.map((item) => (
-          <div key={item.id} className="container">
-            <span>rating: {item.rating}</span>
-            <br />
-            <span>by {item.user?.firstName} </span>
-            <span>{item.user?.lastName}</span>
-            <br />
-            <span> {item.text}</span>
-            <br />
-            <hr />
-            <span>{item.createdAt.slice(0, 10)}</span>
-            <style jsx>{`
-              .container {
-                margin: 50px;
-                padding: 10px;
-              }
-            `}</style>
+          <div key={item.id} className={styles.item}>
+            <div>
+              <div className={styles.rating}>rating: {item.rating}</div>
+              <span className={styles.rating}>
+                by {item.user?.firstName} {item.user?.lastName}
+              </span>
+              <div className={styles.rating}>
+                {new Date(item.createdAt).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </div>
+            </div>
+
+            <div className={styles.rating}>{item.text}</div>
           </div>
         ))}
       </main>
-    </>
+    </Layout>
   );
 }

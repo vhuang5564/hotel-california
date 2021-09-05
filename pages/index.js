@@ -16,27 +16,6 @@ export default function Home({ ballrooms }) {
   return (
     <>
     <Layout>
-    {/* <div className={styles.container}> */}
-      {/* <Head>
-        <title>Main Page</title>
-        <meta name="description" content="" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head> */}
-      {/* <main className={styles.main}> */}
-
-          {/* <header className={styles.header}>
-            <div className={styles.hotel_image}><Image src="/hotel.png" alt="hotel" height="100" width="100"/> </div>
-            <h1 className={styles.title}>
-              Welcome to <a href="https://nextjs.org">hCali</a>
-            </h1>
-
-            <p className={styles.description}>
-              To get started, click on your meeting room or send us message in the live chat
-            </p>
-          </header> */}
-
-    
-
         <div className={styles.grid}>
           {ballrooms.map((ballroom) => (
           <Link key={ballroom.id} href="/[ballroom]/requests" as={`/${ballroom.name}/requests`} >
@@ -53,9 +32,6 @@ export default function Home({ ballrooms }) {
             </Link>
           ))}
         </div>
-      {/* </main> */}
-
-    {/* </div> */}
     </Layout>
     </>
   );
