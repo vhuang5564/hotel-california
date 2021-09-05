@@ -3,11 +3,23 @@ import styles from '../styles/Ballroom.module.scss';
 import AppsIcon from '@material-ui/icons/Apps';
 import prisma from '../lib/prisma'
 export default function Ballroom() {
-  const images = [
+  
+  const notify = () => toast.success('Your request has been sent!', {
+    position: "top-center",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: false,
+    progress: undefined,
+  });
+
+  const [images, setImages] = useState([
     {
       url: '/bw_palm_leaf.png',
       title: 'COFFEE SERVICE',
       icon: <AppsIcon />,
+      isDisabled: true
     },
     {
       url: '/bw_palm_leaf.png',
@@ -63,11 +75,14 @@ export default function Ballroom() {
       // url: '/palm_leaf.jpg',
       title: 'OTHER REQUESTS',
       icon: <AppsIcon />,
-    },
-  ];
+      isDisabled: false
+    }
+  ]);
 
   const request = (image) => {
-    console.log(image.title); //object title
+    // console.log(image.title); //object title
+    // console.log(image.isDisabled);
+    console.log(image.isDisabled);
   };
 
   return (
