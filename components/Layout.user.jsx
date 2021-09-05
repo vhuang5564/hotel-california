@@ -3,10 +3,11 @@ import { useRouter } from 'next/router'
 import Header from './Header.user'
 import Footer from './Footer'
 import Showcase from './Showcase'
+import Sidebar from './Sidebar'
 // import InfoBox from './InfoBox'
 import styles from '@/styles/Layout.user.module.css'
 
-export default function Layout({ title, keywords, description, children }) {
+export default function Layout({ title, keywords, description, children, showcase }) {
   const router = useRouter()
 
   return (
@@ -21,8 +22,9 @@ export default function Layout({ title, keywords, description, children }) {
 
       <Header />
 
+      <Sidebar />
       {/* show the Showcase only on the home page */}
-      {router.pathname === '/' && <Showcase />}
+      {(router.pathname === '/' ) && <Showcase />}
 
       <div className={styles.container}>{children}</div>
       <Footer />
@@ -34,4 +36,5 @@ Layout.defaultProps = {
   title: 'HotelCalifornia | Connect with us',
   description: 'Connecting venue clients and the hotel team ',
   keywords: 'hotel, events, chat, venue, requests',
+  showcase: "test"
 }

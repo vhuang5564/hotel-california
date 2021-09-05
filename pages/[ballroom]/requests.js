@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../../styles/Home.module.scss';
-import Ballroom from '../../components/Ballroom';
+import styles from '@/styles/Ballroom.module.scss';
+import Ballroom from '@/components/Ballroom';
 import Layout from '@/components/Layout.user';
 
 const Requests = () => {
@@ -11,13 +11,22 @@ const Requests = () => {
 
   return (
     <>
+        <main className={styles.hero}>
       <Layout>
-        <body>
-          <h1>How can we improve your event in {ballroom}?</h1>
-          <h2>Please choose your options here</h2>
+          <section style={{ textAlign: 'center', fontSize: '150%' }}>
+            <h1
+              style={{
+                fontFamily: "'Proza Libre', sans-serif",
+                color: 'rgb(88,88,88)',
+              }}
+            >
+              How can we improve your event in {ballroom}?
+            </h1>
+          </section>
+
           <Ballroom />
-        </body>
       </Layout>
+        </main>
     </>
   );
 };

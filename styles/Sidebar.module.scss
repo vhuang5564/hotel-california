@@ -1,23 +1,26 @@
 .sidebar {
   display: flex !important;
   background-color: lightgray !important;
-  border-radius: 0.5em !important;
+  // border-radius: 0.5em !important;
   padding: 0.5em;
   box-sizing: border-box;
   overflow: hidden;
   position: fixed;
-  z-index: 3;
+  // z-index: 3;
   position: fixed !important;
   height: 100%;
+  width: 16%;
   flex-direction: column;
+  z-index: 6;
 
   button {
     display: flex;
     padding: 1em;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     font-size: 16px;
-    font-family: unset;
+    font-family: inherit;
+    height: 7rem;
   }
 
   button:hover {
@@ -27,7 +30,10 @@
 
 .icon {
   position: fixed !important;
-  z-index: 4;
+  z-index: 7;
   top: 50%;
   opacity: 0.5;
+}
+.sidebar p {
+  margin: 8px;
 }

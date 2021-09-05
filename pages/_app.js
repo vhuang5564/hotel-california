@@ -5,7 +5,7 @@ import Sidebar from '../components/Sidebar.jsx';
 const MyApp = ({ Component, pageProps }) => {
   return <>
     <AuthProvider>
-      <Sidebar />
+      
       <Component {...pageProps} />
     </AuthProvider>
   </>;

@@ -12,7 +12,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.logo}>
         <Link href='/'>
-          <a>Hotel California</a>
+          <a>HOTEL <span style={{fontFamily: "'Allison', cursive", fontSize: "190%", fontWeight: "bold"}}>California</span></a>
         </Link>
       </div>
 
@@ -21,8 +21,8 @@ export default function Header() {
       <nav>
         <ul>
           <li>
-            <Link href='#'>
-              <a>Link Somewhere</a>
+            <Link href='/reviews'>
+              <a>Leave a Review</a>
             </Link>
           </li>
           {user ? (

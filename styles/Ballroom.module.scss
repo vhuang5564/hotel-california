@@ -22,7 +22,6 @@
   height: 10rem;
   width: 100%;
   margin-top: 1rem !important;
-  
 }
 .ballroom::after {
   content: '';
@@ -32,6 +31,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
 }
 .ballroom * {
   z-index: 5;
@@ -49,18 +49,25 @@
   
 }
 
-// .card {
-//   margin: 1rem;
-//   padding: 1.5rem;
-//   text-align: center;
-//   color: inherit;
-//   text-decoration: none;
-//   border: 1px solid #eaeaea;
-//   border-radius: 10px;
-//   width: 95%;
-//   background-color: white;
-// }
-
-// h2:not(.ballroom) {
-//   filter: brightness(0.1)
-// }
+.hero {
+    /* Sizing */
+    width: 100vw;
+    height: 100vh;
+    
+    // /* Flexbox stuff */
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    
+    // /* Text styles */
+    // text-align: center;
+    // color: white;
+    
+    // /* Background styles */
+    // background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.1)), url('/bw_palm_leaf.png');
+    background-image: url('https://images.pexels.com/photos/62693/pexels-photo-62693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

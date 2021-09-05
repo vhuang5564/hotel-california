@@ -2,7 +2,7 @@ import Head from 'next/head';
 import prisma from '../lib/prisma';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../styles/Home.module.scss';
+import styles from '@/styles/Home.module.scss';
 import Layout from '@/components/Layout.user';
 
 
@@ -25,7 +25,8 @@ export default function Home({ ballrooms }) {
                 <div
                   className={styles.background}
                   style={{
-                    backgroundImage: `url(${ballroom.imageUrl})`
+                    // backgroundImage: `url(${ballroom.imageUrl})`
+                    backgroundImage: `url('/palm_leaf.jpg)`
                   }}
                 ></div>
               </a>

@@ -9,7 +9,10 @@ import AddIcCallIcon from '@material-ui/icons/AddIcCall';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import PoolIcon from '@material-ui/icons/Pool';
 import styles from '../styles/Sidebar.module.scss';
-
+import { BsChatDots } from 'react-icons/bs';
+import { MdRateReview } from 'react-icons/md';
+import { FaQuestionCircle } from 'react-icons/fa';
+import { AiOutlineHome } from 'react-icons/ai';
 
 export default function Sidebar() {
   const [checked, setChecked] = React.useState(false);
@@ -20,14 +23,49 @@ export default function Sidebar() {
 
   return (
     <div>
-      <IconButton className={styles.icon} onClick={handleChange}><ArrowForwardIosIcon /></IconButton>
-      <Slide direction="right" in={checked} mountOnEnter unmountOnExit className={styles.sidebar}>
+      <IconButton className={styles.icon} onClick={handleChange}>
+        <ArrowForwardIosIcon />
+      </IconButton>
+      <Slide
+        direction="right"
+        in={checked}
+        mountOnEnter
+        unmountOnExit
+        className={styles.sidebar}
+      >
         <div>
-          <h2>Hotel California</h2>
-          <Link href="/"><a><Button>HOME <AppsIcon /></Button></a></Link>
-          <Link href="/chat"><a><Button>CHAT <AddIcCallIcon /></Button></a></Link>
-          <Link href="/reviews"><a><Button>REVIEWS <MenuBookIcon /></Button></a></Link>
-          <Link href="/"><a><Button>FAQ <PoolIcon /></Button></a></Link>
+          <Link href="/">
+            <a>
+              <Button>
+                <AiOutlineHome />
+                <p >HOME{' '}</p>
+              </Button>
+            </a>
+          </Link>
+          <Link href="/chat">
+            <a>
+              <Button>
+                <BsChatDots />
+                <p>CHAT{' '}</p>
+              </Button>
+            </a>
+          </Link>
+          <Link href="/reviews">
+            <a>
+              <Button>
+                <MdRateReview />
+                <p>REVIEWS{' '}</p>
+              </Button>
+            </a>
+          </Link>
+          <Link href="/">
+            <a>
+              <Button>
+                <FaQuestionCircle />
+                <p>FAQ{' '}</p>
+              </Button>
+            </a>
+          </Link>
         </div>
       </Slide>
     </div>

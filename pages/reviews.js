@@ -77,7 +77,7 @@ export default function Review({ data }) {
           <div key={item.id} className={styles.item}>
             <div>
               <div className={styles.rating}>rating: {item.rating}</div>
-              <span className={styles.rating}>
+              <span className={styles.rating} style={{fontFamily: "'Allison', cursive", color: "red"}}>
                 by {item.user?.firstName} {item.user?.lastName}
               </span>
               <div className={styles.rating}>

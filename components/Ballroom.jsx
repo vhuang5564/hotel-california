@@ -1,75 +1,66 @@
 import Button from '@material-ui/core/Button';
 import styles from '../styles/Ballroom.module.scss';
 import AppsIcon from '@material-ui/icons/Apps';
-import LocalDiningIcon from '@material-ui/icons/LocalDining';
-import StreetviewIcon from '@material-ui/icons/Streetview';
-import MenuBookIcon from '@material-ui/icons/MenuBook';
-import MoodIcon from '@material-ui/icons/Mood';
-import SubwayIcon from '@material-ui/icons/Subway';
-import TimeToLeaveIcon from '@material-ui/icons/TimeToLeave';
-import PoolIcon from '@material-ui/icons/Pool';
-import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
-import AddIcCallIcon from '@material-ui/icons/AddIcCall';
-import BathtubIcon from '@material-ui/icons/Bathtub';
+
 export default function Ballroom() {
   const images = [
     {
-      url: '/palm_leaf.jpg',
-      title: 'COFFEE SERVICE',
+      url: '/bw_palm_leaf.png',
+      title: 'PROVIDE COFFEE SERVICE',
       icon: <AppsIcon />,
     },
     {
       url: '/bw_palm_leaf.png',
       title: 'SALES REPRESENTATIVE REQUIRED',
-      icon: <LocalDiningIcon />,
+      icon: <AppsIcon />,
     },
     {
-      url: '/palm_leaf.jpg',
-      title: 'ASSISTANCE WITH AUDIO VISUAL',
-      icon: <MenuBookIcon />,
+      url: '/bw_palm_leaf.png',
+      title: 'ASSIST WITH AUDIO VISUAL',
+      icon: <AppsIcon />,
     },
     {
-      url: '/light_bg.png',
-      title: 'COPY OF THE BANQUET EVENT ORDER',
-      icon: <BathtubIcon />,
+      // url: '/palm_leaf.jpg',
+      title: 'EMAIL THE BANQUET EVENT ORDER',
+      icon: <AppsIcon />,
     },
     {
-      url: '/light_bg.png',
-      title: 'NEW MEETING ROOM KEY',
-      icon: <PoolIcon />,
+      // url: '/palm_leaf.jpg',
+      title: 'PROVIDE A NEW MEETING ROOM KEY',
+      icon: <AppsIcon />,
     },
     {
-      url: '/light_bg.png',
+      // url: '/palm_leaf.jpg',
       title: 'RESTOCK BOTTLED WATER',
-      icon: <MoodIcon />,
+      icon: <AppsIcon />,
     },
     {
       url: '/bw_palm_leaf.png',
-      title: 'ASSISTANCE MAKING XEROX COPIES',
-      icon: <AddIcCallIcon />,
+      title: 'ASSIST MAKING XEROX COPIES',
+      icon: <AppsIcon />,
     },
     {
-      url: '/palm_leaf.jpg',
+      url: '/bw_palm_leaf.png',
       title: 'ADJUST ROOM TEMTERATURE',
-      icon: <StreetviewIcon />,
+      icon: <AppsIcon />,
     },
     {
       url: '/bw_palm_leaf.png',
-      title: 'EXTRA CHAIRS',
-      icon: <SubwayIcon />,
+      title: 'BRING EXTRA CHAIRS',
+      icon: <AppsIcon />,
     },
     {
-      url: '/light_bg.png',
-      title: 'MEETING ROOM REFRESH',
-      icon: <AssignmentIndIcon />,
+      // url: '/palm_leaf.jpg',
+      title: 'REFRESH THE MEETING ROOM',
+      icon: <AppsIcon />,
     },
     {
-      url: '/light_bg.png',
-      title: 'WET FLOOR',
-      icon: <TimeToLeaveIcon />,
+      // url: '/palm_leaf.jpg',
+      title: 'BANQUET CAPTAIN REQUIRED',
+      icon: <AppsIcon />,
     },
     {
-      url: '/light_bg.png',
+      // url: '/palm_leaf.jpg',
       title: 'OTHER REQUESTS',
       icon: <AppsIcon />,
     },
