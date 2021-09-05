@@ -25,8 +25,8 @@ export default function Home({ ballrooms }) {
                 <div
                   className={styles.background}
                   style={{
-                    // backgroundImage: `url(${ballroom.imageUrl})`
-                    backgroundImage: `url('/palm_leaf.jpg)`
+                    backgroundImage: `url(${ballroom.imageUrl})`
+                    // backgroundImage: `url('/palm_leaf.jpg)`
                   }}
                 ></div>
               </a>

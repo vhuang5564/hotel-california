@@ -1,4 +1,4 @@
-import styles from '@/styles/Item.module.css';
+import styles from '@/styles/reviews.module.css';
 import { useState } from 'react';
 import Layout from '@/components/Layout.user';
 import prisma from '../lib/prisma';
@@ -48,7 +48,7 @@ export default function Review({ data }) {
       <Layout title="Hotel California | Leave A Review">
         <main>
           <div className={styles.auth}>
-            <h1>Tell Us How We Did Today</h1>
+            <h1>How Did We Do Today?</h1>
             <form onSubmit={saveReview}>
               <div>
                 <label htmlFor="rating">Rating</label>
@@ -73,7 +73,7 @@ export default function Review({ data }) {
                   required
                 />
               </div>
-              <input type="submit" value="Post Review" className="btn" />
+              <input type="submit" value="Post My Review" className="btn" />
             </form>
           </div>
           <section>

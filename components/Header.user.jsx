@@ -1,4 +1,4 @@
-// import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'
+import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'
 import { useContext } from 'react'
 import Link from 'next/link'
 // import Search from './Search'
@@ -43,7 +43,7 @@ export default function Header() {
                   onClick={() => logout()}
                   className='btn-secondary btn-icon'
                 >
-                  {/* <FaSignOutAlt />  */}
+                  <FaSignOutAlt /> 
                   Logout
                 </button>
               </li>
@@ -54,7 +54,7 @@ export default function Header() {
               <li>
                 <Link href='/account/login'>
                   <a className='btn-secondary btn-icon'>
-                    {/* <FaSignInAlt />  */}
+                    <FaSignInAlt /> 
                     Login
                   </a>
                 </Link>

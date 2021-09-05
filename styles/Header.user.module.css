@@ -15,7 +15,7 @@
 }
 
 .header a:hover {
-  color: #000;
+  color: red;
 }
 .header ul {
   display: flex;

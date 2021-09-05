@@ -82,7 +82,7 @@ export default function Ballroom() {
             }}
             onClick={() => request(image)}
           >
-            <h2 className={styles.wording}>{image.title}</h2>
+            <a href="#"><h2 className={styles.wording}>{image.title}</h2></a>
           </Button>
         </div>
       ))}

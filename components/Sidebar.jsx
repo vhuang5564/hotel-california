@@ -4,10 +4,6 @@ import { IconButton } from '@material-ui/core';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Link from 'next/dist/client/link';
 import { Button } from '@material-ui/core';
-import AppsIcon from '@material-ui/icons/Apps';
-import AddIcCallIcon from '@material-ui/icons/AddIcCall';
-import MenuBookIcon from '@material-ui/icons/MenuBook';
-import PoolIcon from '@material-ui/icons/Pool';
 import styles from '../styles/Sidebar.module.scss';
 import { BsChatDots } from 'react-icons/bs';
 import { MdRateReview } from 'react-icons/md';
@@ -16,20 +12,25 @@ import { AiOutlineHome } from 'react-icons/ai';
 
 export default function Sidebar() {
   const [checked, setChecked] = React.useState(false);
-
+  const [isActive, setActive] = React.useState(false);
+  const toggleClass = () => {
+    setActive(!isActive);
+  };
   const handleChange = () => {
     setChecked((prev) => !prev);
+    setActive(!isActive);
   };
 
   return (
     <div>
-      <IconButton className={styles.icon} onClick={handleChange}>
+      <IconButton className={isActive ? styles.active : styles.icon} onClick={handleChange}>
         <ArrowForwardIosIcon />
       </IconButton>
       <Slide
         direction="right"
         in={checked}
         mountOnEnter
+        unmountOnBlur={true}
         unmountOnExit
         className={styles.sidebar}
       >

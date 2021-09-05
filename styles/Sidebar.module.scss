@@ -1,8 +1,9 @@
 .sidebar {
   display: flex !important;
   background-color: lightgray !important;
+  opacity: 0.97;
   // border-radius: 0.5em !important;
-  padding: 0.5em;
+  // padding: 0.5em;
   box-sizing: border-box;
   overflow: hidden;
   position: fixed;
@@ -15,16 +16,20 @@
 
   button {
     display: flex;
-    padding: 1em;
-    justify-content: space-between;
+    padding: 1.5em;
+    justify-content: left;
     align-items: center;
     font-size: 16px;
     font-family: inherit;
     height: 7rem;
+    width: 100%;
+    
+    
   }
 
   button:hover {
-    opacity: 1 !important;
+    color: white;
+    opacity: 2 !important;
   }
 }
 
@@ -32,8 +37,28 @@
   position: fixed !important;
   z-index: 7;
   top: 50%;
-  opacity: 0.5;
+  // opacity: 0.5;
+  color: red !important;
+  transition: transform .2s;
 }
 .sidebar p {
   margin: 8px;
+}
+
+.active {
+  position: fixed !important;
+  z-index: 7;
+  top: 50%;
+  // opacity: 0.5;
+  color: red !important;
+  transition: transform .2s;
+  transform: rotateZ(180deg) translateX(-8rem);
+}
+@media(max-width:992px){
+  .active {
+    transform:  translateX(-0.5rem) !important;
+  }
+  .sidebar {
+    // overflow: hidden;
+  }
 }
