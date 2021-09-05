@@ -20,7 +20,7 @@ const Requests = () => {
                 color: 'rgb(88,88,88)',
               }}
             >
-              How can we improve your event in {ballroom}?
+              How can we improve your event in <span style={{fontFamily: "'Allison', cursive", color: "red"}}>{ballroom}</span>?
             </h1>
           </section>
 
