@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import Header from './Header.user'
+import Header from './Header.admin'
 import Footer from './Footer'
 import Showcase from './Showcase'
 import Sidebar from './Sidebar'
 // import InfoBox from './InfoBox'
 import styles from '@/styles/Layout.user.module.css'
 
-export default function Layout({ title, keywords, description, children, showcase }) {
+export default function LayoutAdmin({ title, keywords, description, children, showcase }) {
   const router = useRouter()
 
   return (
@@ -22,9 +22,9 @@ export default function Layout({ title, keywords, description, children, showcas
 
       <Header />
 
-      <Sidebar />
+      {/* <Sidebar /> */}
       {/* show the Showcase only on the home page */}
-      {(router.pathname === '/' ) && <Showcase />}
+      {/* {(router.pathname === '/' ) && <Showcase />} */}
 
       <div className={styles.container}>{children}</div>
       <Footer />
@@ -32,7 +32,7 @@ export default function Layout({ title, keywords, description, children, showcas
   )
 }
 
-Layout.defaultProps = {
+LayoutAdmin.defaultProps = {
   title: 'HotelCalifornia | Connect with us',
   description: 'Connecting venue clients and the hotel team ',
   keywords: 'hotel, events, chat, venue, requests',
