@@ -9,10 +9,16 @@ import { BsChatDots } from 'react-icons/bs';
 import { MdRateReview } from 'react-icons/md';
 import { FaQuestionCircle } from 'react-icons/fa';
 import { AiOutlineHome } from 'react-icons/ai';
+import Modal from '@/components/Modal';
+import { useState } from 'react';
+import AblyChatComponent from './AblyChatComponent';
+
+
 
 export default function Sidebar() {
-  const [checked, setChecked] = React.useState(false);
-  const [isActive, setActive] = React.useState(false);
+  const [checked, setChecked] = useState(false);
+  const [isActive, setActive] = useState(false);
+  const [showModal, setShowModal] = useState(false)
   const toggleClass = () => {
     setActive(!isActive);
   };
@@ -43,14 +49,12 @@ export default function Sidebar() {
               </Button>
             </a>
           </Link>
-          <Link href="/chat">
-            <a>
-              <Button>
+          
+              <Button onClick={() => setShowModal(true)}>
                 <BsChatDots />
                 <p>CHAT{' '}</p>
               </Button>
-            </a>
-          </Link>
+         
           <Link href="/reviews">
             <a>
               <Button>
@@ -69,6 +73,7 @@ export default function Sidebar() {
           </Link>
         </div>
       </Slide>
+      <Modal show={showModal} onClose={() => setShowModal(false)}><AblyChatComponent/></Modal>
     </div>
   );
 }
