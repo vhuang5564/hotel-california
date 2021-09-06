@@ -27,11 +27,13 @@
 .logo {
   color: red;
   font-size: 20px;
-  /* text-transform: uppercase; */
 }
 
 .logo a {
   color: red;
+}
+.logo a:hover {
+  color: black;
 }
 
 @media (max-width: 768px) {
