@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import prisma from '../../lib/prisma';
-import styles from '../../styles/AdminDashboard.module.scss';
+import styles from '@/styles/AdminDashboard.module.scss';
 import PhoneIcon from '@material-ui/icons/Phone';
 import OndemandVideoIcon from '@material-ui/icons/OndemandVideo';
 import LayoutAdmin from '@/components/Layout.admin';
@@ -43,9 +43,9 @@ export default function Reviews({ data }) {
 
   return (
     <LayoutAdmin title="Admin Dashboard | Hotel California">
-      <div className={styles.header}>
+      {/* <div className={styles.header}>
         <h1>Requests</h1>
-      </div>
+      </div> */}
       <section className={styles.container}>
         {data?.map((item) => (
           <div

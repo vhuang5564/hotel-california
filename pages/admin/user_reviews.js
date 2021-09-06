@@ -1,8 +1,7 @@
-import Head from 'next/head';
+import LayoutAdmin from '@/components/Layout.admin';
 import prisma from '../../lib/prisma';
 
 export async function getStaticProps() {
-  
   const reviews = await prisma.review.findMany({
     include: {
       user: true,
@@ -11,8 +10,7 @@ export async function getStaticProps() {
       createdAt: 'desc',
     },
   });
-  // Had to do the json trick to get the date obj that is not serializable and will error out if not stringified
-  
+
   return {
     props: {
       data: JSON.parse(JSON.stringify(reviews)),
@@ -21,17 +19,12 @@ export async function getStaticProps() {
   };
 }
 
-export default function Reviews({data }) {
-
+export default function Reviews({ data }) {
   return (
-    <>
-    
-      <Head>
-        <title>Reviews Dashboard</title>
-      </Head>
+    <LayoutAdmin title="Admin Dashboard Reviews | Hotel California">
       <section>
-      {data?.map((item) => (
-          <div key={item.id} className="container">
+        {data?.map((item) => (
+          <div key={item.id} >
             <span>rating: {item.rating}</span>
             <br />
             <span>by {item.user?.firstName} </span>
@@ -47,13 +40,8 @@ export default function Reviews({data }) {
             <span>{item.createdAt.slice(0, 10)}</span>
           </div>
         ))}
-        <style jsx>{`
-        .container {
-          margin: 50px;
-          padding: 10px;
-        }
-      `}</style>
+        
       </section>
-    </>
-  )
+    </LayoutAdmin>
+  );
 }

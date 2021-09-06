@@ -1,15 +1,15 @@
-import prisma from '../lib/prisma';
+import prisma from '../../lib/prisma';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Layout from '@/components/Layout.user';
 
-export default function SearchPage({ data} ) {
+export default function SearchPage({ data } ) {
   const router = useRouter();
-  console.log('>>>>>>>>>>>>>>>>>>>', router.query);
+  console.log('>>>>>>>>>>>>>>>>>>>', router.query.term);
   return (
     <Layout title="Search Results">
       <Link href="/admin/dashboard">Go Back</Link>
-      <h1>Search Results for </h1>
+      <h1>Search Results for {router.query.term}</h1>
       {data.length === 0 && <h3>No requests to show</h3>}
       {data.map((item) => (
         <div key={item.id}>
@@ -42,20 +42,20 @@ export default function SearchPage({ data} ) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps({ query: { term } }) {
   const requests = await prisma.request.findMany({
     where: {
       OR: [
         {
           text: {
-            contains: 'aniston',
+            contains: term,
             mode: 'insensitive',
           },
         },
         {
           ballroom: {
             name: {
-              contains: 'aniston',
+              contains: term,
               mode: 'insensitive',
             },
           },
@@ -63,7 +63,7 @@ export async function getServerSideProps(context) {
         {
           user: {
             firstName: {
-              contains: 'aniston',
+              contains: term,
               mode: 'insensitive',
             },
           },
@@ -71,7 +71,7 @@ export async function getServerSideProps(context) {
         {
           user: {
             lastName: {
-              contains: 'aniston',
+              contains: term,
               mode: 'insensitive',
             },
           },

@@ -4,22 +4,23 @@ import styles from '@/styles/Search.module.css';
 
 export default function Search() {
   const [term, setTerm] = useState('');
+
   const router = useRouter();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    router.push(`/dashboard/search?term=${term}`);
+    router.push(`/admin/search?term=${term}`);
     setTerm('');
   };
+  
   return (
     <div className={styles.search}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={term}
-          onChange={(e) => {
-            setTerm(e.target.value);
-          }}
-          placeholder="Search"
+          onChange={(e) => setTerm(e.target.value.trim())}
+          placeholder="Search Requests"
         />
       </form>
     </div>
