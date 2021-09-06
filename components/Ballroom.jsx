@@ -23,7 +23,7 @@ export default function Ballroom() {
 
   const [images, setImages] = useState([
     {
-      url: '/palm_leaf.jpg',
+      url: '/bw_palm_leaf.png',
       title: 'COFFEE SERVICE',
       icon: <AppsIcon />,
       isDisabled: false
@@ -35,25 +35,25 @@ export default function Ballroom() {
       isDisabled: false
     },
     {
-      url: '/palm_leaf.jpg',
+      url: '/bw_palm_leaf.png',
       title: 'AUDIO VISUAL HELP',
       icon: null,
       isDisabled: false
     },
     {
-      url: '/light_bg.png',
+      
       title: 'CONTRACT COPY',
       icon: <AppsIcon />,
       isDisabled: false
     },
     {
-      url: '/light_bg.png',
+      
       title: 'NEW ROOM KEY',
       icon: <AppsIcon />,
       isDisabled: false
     },
     {
-      url: '/light_bg.png',
+      
       title: 'BOTTLED WATER',
       icon: <AppsIcon />,
       isDisabled: false
@@ -65,7 +65,7 @@ export default function Ballroom() {
       isDisabled: false
     },
     {
-      url: '/palm_leaf.jpg',
+      url: '/bw_palm_leaf.png',
       title: 'ADJUST SETUP',
       icon: <AppsIcon />,
       isDisabled: false
@@ -77,19 +77,19 @@ export default function Ballroom() {
       isDisabled: false
     },
     {
-      url: '/light_bg.png',
+      
       title: 'ROOM REFRESH',
       icon: <AppsIcon />,
       isDisabled: false
     },
     {
-      url: '/light_bg.png',
+      
       title: 'BANQUET CAPTAIN',
       icon: <AppsIcon />,
       isDisabled: false
     },
     {
-      url: '/light_bg.png',
+      
       title: 'OTHER REQUESTS',
       icon: <AppsIcon />,
       isDisabled: false
@@ -105,7 +105,7 @@ export default function Ballroom() {
               className={styles.ballroom}
               variant="outlined"
               style={{
-                backgroundImage: `url(${image.url})`,
+                backgroundImage: `url(${image?.url})`,
               }}
               onClick={() => request(image)}
               disabled={image.isDisabled}
