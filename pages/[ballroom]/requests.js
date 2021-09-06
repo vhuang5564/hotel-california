@@ -8,7 +8,6 @@ import { prisma, PrismaClient } from '@prisma/client';
 import { ToastContainer, toast } from 'react-toastify';
 import { useContext } from 'react';
 import AppsIcon from '@material-ui/icons/Apps';
-import requestHandler from 'pages/api/requests/create';
 
 const images = [
   {
@@ -104,7 +103,6 @@ const Requests = () => {
     console.log('text', image.title);
     console.log('ballroom', ballroom);
 
-    console.log(requestHandler);
   };
 
   return (
