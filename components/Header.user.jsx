@@ -36,7 +36,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <button className="btn-secondary btn-icon" onClick={() => setShowModal(true)}>
+            <button className="btn-no-style" onClick={() => setShowModal(true)}>
               <a>Chat Now</a>
             </button>
             

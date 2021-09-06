@@ -66,12 +66,10 @@ export default function Review({ data }) {
                   // className={styles.item}
                   id="text"
                   name="text"
-                  // type="text"
-                  // cols="30"
-                  // rows="10"
+                  type="textarea"
+                  rows="5"
                   placeholder="Your review here... 🏄"
                   required
-                  
                 />
               </div>
               <input type="submit" value="Post My Review" className="btn" />
