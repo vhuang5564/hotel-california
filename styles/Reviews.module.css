@@ -9,6 +9,7 @@
   padding: 13px;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
   
+  
 }
 
 .rating {
@@ -50,6 +51,8 @@
   height: 40px;
   padding: 5px;
   font-size: 18px;
+  color: red;
+  resize: vertical;
 }
 
 .auth input[type='submit'] {
