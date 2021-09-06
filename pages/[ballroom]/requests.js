@@ -4,6 +4,26 @@ import Image from 'next/image';
 import styles from '@/styles/Ballroom.module.scss';
 import Ballroom from '@/components/Ballroom';
 import Layout from '@/components/Layout.user';
+import { prisma } from '@prisma/client';
+import { ToastContainer, toast } from 'react-toastify';
+
+const sendRequest = () => {
+  console.log("sent");
+}
+
+const request = (image) => {
+  toast.success('Your request has been sent!', {
+    position: "top-center",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: false,
+    progress: undefined,
+  });
+
+  console.log(image.title);
+};
 
 const Requests = () => {
   const router = useRouter();
@@ -24,7 +44,20 @@ const Requests = () => {
             </h1>
           </section>
 
-          <Ballroom />
+          <Ballroom onClick={request}/>
+
+          <ToastContainer
+              position="top-center"
+              autoClose={2000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable={false}
+              pauseOnHover={false}
+            />
+
       </Layout>
         </main>
     </>
@@ -32,3 +65,10 @@ const Requests = () => {
 };
 
 export default Requests;
+
+// const requests = await prisma.Request.create({
+//   data: {
+//     text: 
+//   }
+
+// })

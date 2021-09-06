@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function Ballroom() {
+export default function Ballroom(props) {
   
   const request = (image) => {
     toast.success('Your request has been sent!', {
@@ -107,7 +107,8 @@ export default function Ballroom() {
               style={{
                 backgroundImage: `url(${image?.url})`,
               }}
-              onClick={() => request(image)}
+              // onClick={() => request(image)}
+              onClick={props.onClick}
               disabled={image.isDisabled}
             >
               <a href="#"><h2 className={styles.wording}>{image.title}</h2></a>
