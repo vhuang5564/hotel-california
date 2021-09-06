@@ -3,7 +3,11 @@ import prisma from '../../lib/prisma';
 import styles from '@/styles/AdminDashboard.module.scss';
 import PhoneIcon from '@material-ui/icons/Phone';
 import OndemandVideoIcon from '@material-ui/icons/OndemandVideo';
+
 import LayoutAdmin from '@/components/Layout.admin';
+
+import LocalCafeTwoToneIcon from '@material-ui/icons/LocalCafeTwoTone';
+
 export async function getStaticProps() {
   const requests = await prisma.request.findMany({
     include: {
@@ -30,12 +34,14 @@ export default function Reviews({ data }) {
   // need to adjust later to include icons of every request
   const request = (text) => {
     switch (text) {
+
       case 'Need help with audio visual\n':
         console.log('success!');
         return <OndemandVideoIcon className={styles.container_icon} />;
       default:
         console.log('failure');
         return;
+
     }
   };
 
@@ -48,31 +54,13 @@ export default function Reviews({ data }) {
       </div> */}
       <section className={styles.container}>
         {data?.map((item) => (
-          <div
-            key={item.id}
-            className={styles.container_inner}
-            // style={{
-            //   backgroundImage: `url(/${item.ballroom.imageUrl})`
-            // }}
-          >
+
+          <div key={item.id} className={styles.container_inner}>
+            <span className={styles.container_name}>by {item.user?.firstName} {item.user?.lastName} {item.user?.phoneNumber} <PhoneIcon/></span>
+            <span className={styles.container_text}> {item.text} in {item.ballroom?.name}</span>
+            <span className={styles.container_date}>posted at {item.createdAt.slice(11, 16)}</span>
             {request(item.text)}
-            <span>by {item.user?.firstName} </span>
-            <span>{item.user?.lastName}</span>
-            <br />
-            <span>
-              {item.user?.phoneNumber} <PhoneIcon />
-            </span>
-            <br />
-            <span> {item.text}</span>
-            <span> in {item.ballroom?.name}</span>
-            <hr />
-            <span
-              style={{
-                color: 'red',
-              }}
-            >
-              posted at {item.createdAt.slice(11, 16)}
-            </span>
+
           </div>
         ))}
         <style jsx>{`
