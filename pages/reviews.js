@@ -1,4 +1,4 @@
-import styles from '@/styles/reviews.module.css';
+import styles from '@/styles/Reviews.module.css';
 import { useState } from 'react';
 import Layout from '@/components/Layout.user';
 import prisma from '../lib/prisma';
@@ -53,22 +53,21 @@ export default function Review({ data }) {
               <div>
                 <label htmlFor="rating">Rating</label>
                 <select id="rating" name="rating" type="number" required>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
                   <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3">3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
                 </select>
               </div>
               <div>
                 <label htmlFor="text">Your Review</label>
                 <textarea
-                  className={styles.item}
+                  // className={styles.item}
                   id="text"
                   name="text"
-                  // type="text"
-                  cols="30"
-                  rows="10"
+                  type="textarea"
+                  rows="5"
                   placeholder="Your review here... 🏄"
                   required
                 />
