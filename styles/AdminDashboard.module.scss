@@ -19,8 +19,6 @@
     color: black;
     font-size: 400% !important;
     grid-area: icon;
-    justify-self: center;
-    align-self: center;
     border-left: dotted gray;
   }
 
@@ -40,7 +38,7 @@
     box-shadow: 2px 3px 5px rgb(0 0 0 / 30%);
     justify-items: start;
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 350px 50px 100px;
     grid-template-rows: auto;
     grid-template-areas: 
     "name phone icon"
