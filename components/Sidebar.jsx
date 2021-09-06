@@ -11,6 +11,9 @@ import { FaQuestionCircle } from 'react-icons/fa';
 import { AiOutlineHome } from 'react-icons/ai';
 import Modal from '@/components/Modal';
 import { useState } from 'react';
+import AblyChatComponent from './AblyChatComponent';
+
+
 
 export default function Sidebar() {
   const [checked, setChecked] = useState(false);
@@ -70,7 +73,7 @@ export default function Sidebar() {
           </Link>
         </div>
       </Slide>
-      <Modal show={showModal} onClose={() => setShowModal(false)}>Chat here</Modal>
+      <Modal show={showModal} onClose={() => setShowModal(false)}><AblyChatComponent/></Modal>
     </div>
   );
 }

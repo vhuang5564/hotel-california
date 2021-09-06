@@ -14,10 +14,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.header}>Live-Chat demo</h1>
+      {/* <main className={styles.main}> */}
+        {/* <h1 className={styles.header}>Live-Chat demo</h1> */}
         <AblyChatComponent />
-      </main>
+      {/* </main> */}
 
       <footer>
       </footer>
