@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Modal from '@/components/Modal';
 import AuthContext from '@/context/AuthContext';
 import styles from '@/styles/Header.user.module.css';
+import AblyChatComponent from './AblyChatComponent';
 
 export default function Header() {
   const { user, logout } = useContext(AuthContext);
@@ -78,7 +79,7 @@ export default function Header() {
           )}
         </ul>
       </nav>
-      <Modal show={showModal} onClose={() => setShowModal(false)}>Modal</Modal>
+      <Modal show={showModal} onClose={() => setShowModal(false)}><AblyChatComponent /></Modal>
     </header>
   );
 }
