@@ -4,30 +4,108 @@ import Image from 'next/image';
 import styles from '@/styles/Ballroom.module.scss';
 import Ballroom from '@/components/Ballroom';
 import Layout from '@/components/Layout.user';
-import { prisma } from '@prisma/client';
+import { prisma, PrismaClient } from '@prisma/client';
 import { ToastContainer, toast } from 'react-toastify';
+import { useContext } from 'react';
+import AppsIcon from '@material-ui/icons/Apps';
+import requestHandler from 'pages/api/requests/create';
 
-const sendRequest = () => {
-  console.log("sent");
-}
+const images = [
+  {
+    url: '/bw_palm_leaf.png',
+    title: 'COFFEE SERVICE',
+    icon: <AppsIcon />,
+    isDisabled: false
+  },
+  {
+    url: '/bw_palm_leaf.png',
+    title: 'SALES COORDINATOR',
+    icon: null,
+    isDisabled: false
+  },
+  {
+    url: '/bw_palm_leaf.png',
+    title: 'AUDIO VISUAL HELP',
+    icon: null,
+    isDisabled: false
+  },
+  {
+    
+    title: 'CONTRACT COPY',
+    icon: <AppsIcon />,
+    isDisabled: false
+  },
+  {
+    
+    title: 'NEW ROOM KEY',
+    icon: <AppsIcon />,
+    isDisabled: false
+  },
+  {
+    
+    title: 'BOTTLED WATER',
+    icon: <AppsIcon />,
+    isDisabled: false
+  },
+  {
+    url: '/bw_palm_leaf.png',
+    title: 'ACCESS TO XEROX',
+    icon: <AppsIcon />,
+    isDisabled: false
+  },
+  {
+    url: '/bw_palm_leaf.png',
+    title: 'ADJUST SETUP',
+    icon: <AppsIcon />,
+    isDisabled: false
+  },
+  {
+    url: '/bw_palm_leaf.png',
+    title: 'EXTRA CHAIRS',
+    icon: <AppsIcon />,
+    isDisabled: false
+  },
+  {
+    
+    title: 'ROOM REFRESH',
+    icon: <AppsIcon />,
+    isDisabled: false
+  },
+  {
+    
+    title: 'BANQUET CAPTAIN',
+    icon: <AppsIcon />,
+    isDisabled: false
+  },
+  {
+    
+    title: 'OTHER REQUESTS',
+    icon: <AppsIcon />,
+    isDisabled: false
+  }
+];
 
-const request = (image) => {
-  toast.success('Your request has been sent!', {
-    position: "top-center",
-    autoClose: 2000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: false,
-    draggable: false,
-    progress: undefined,
-  });
-
-  console.log(image.title);
-};
 
 const Requests = () => {
   const router = useRouter();
   const { ballroom } = router.query;
+
+  const sendRequest = (image) => {
+    toast.success('Your request has been sent!', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+    });
+  
+    console.log('text', image.title);
+    console.log('ballroom', ballroom);
+
+    console.log(requestHandler);
+  };
 
   return (
     <>
@@ -44,19 +122,19 @@ const Requests = () => {
             </h1>
           </section>
 
-          <Ballroom onClick={request}/>
+          <Ballroom onClick={sendRequest} images={images}/>
 
           <ToastContainer
-              position="top-center"
-              autoClose={2000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable={false}
-              pauseOnHover={false}
-            />
+            position="top-center"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable={false}
+            pauseOnHover={false}
+          />
 
       </Layout>
         </main>
@@ -66,9 +144,3 @@ const Requests = () => {
 
 export default Requests;
 
-// const requests = await prisma.Request.create({
-//   data: {
-//     text: 
-//   }
-
-// })
