@@ -74,3 +74,8 @@ h1 {
 .btn-icon svg {
   margin-right: 5px;
 }
+
+.btn-no-style {
+  border: 0;
+  background-color: inherit;
+}
