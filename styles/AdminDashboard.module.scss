@@ -5,23 +5,48 @@
   position: relative;
   height: 100%;
 
-  &_inner {
-    background-color: white;
-    width: 50%;
-    border: 1px solid;
-    padding: 5px;
-    border-radius: 10px;
-    margin: 5px;
-    font-family: sans-serif;
+  &_name {
     color: black;
-    background-size: cover;
+    font-family: sans-serif;
+    grid-area: name;
+  }
+
+  &_text {
+    grid-area: text;
   }
 
   &_icon {
     color: black;
-    font-size: xxx-large !important;
-    position: absolute;
-    left: 40%;
+    font-size: 400% !important;
+    grid-area: icon;
+    justify-self: center;
+    align-self: center;
+    border-left: dotted gray;
+  }
+
+  &_date {
+    grid-area: date;
+    color: red;
+  }
+
+  &_inner {
+    background-color: white;
+    width: 40%;
+    border: 1px solid;
+    padding: 5px;
+    margin: 20px;
+    font-family: sans-serif;
+    color: black;    
+    box-shadow: 2px 3px 5px rgb(0 0 0 / 30%);
+    justify-items: start;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "name phone icon"
+    "text ballroom icon"
+    "date date icon";
+    border-left: thick solid black;
   }
 }
 
