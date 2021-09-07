@@ -12,7 +12,7 @@ import Button from '@material-ui/core/Button';
 import Popover from '@material-ui/core/Popover';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import Box from '@material-ui/core/Box';
-import ShowcaseAdmin from '@/components/ShowcaseAdmin';
+import AblyChatComponent from '@/components/AblyChatComponent';
 
 export async function getStaticProps() {
   const requests = await prisma.request.findMany({
@@ -138,6 +138,7 @@ export default function Reviews({ data }) {
           </div>
         ))}
       </section>
+      <section className={styles.chat}><AblyChatComponent /></section>
     </LayoutAdmin>
   );
 }
