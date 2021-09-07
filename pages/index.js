@@ -18,7 +18,7 @@ export default function Home({ ballrooms }) {
     <Layout>
         <div className={styles.grid}>
           {ballrooms.map((ballroom) => (
-          <Link key={ballroom.id} href="/[ballroom]/requests" as={`/${ballroom.name}/requests`} >
+          <Link key={ballroom.id} href="/[ballroom]/requests" as={`/${ballroom.id}/requests`} >
             {/* <Link href="/" key={ballroom.id}> */}
               <a className={styles.card}>
                 <h2>{ballroom.name}</h2>

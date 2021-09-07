@@ -87,8 +87,10 @@ const images = [
 
 
 const Requests = () => {
+  
   const router = useRouter();
   const { ballroom } = router.query;
+ 
 
   const sendRequest = (image) => {
     toast.success('Your request has been sent!', {
@@ -101,8 +103,8 @@ const Requests = () => {
       progress: undefined,
     });
   
-    console.log('text', image.title);
-    console.log('ballroom', ballroom);
+    // console.log('text', image.title);
+    // console.log('ballroom', ballroom);
 
     // console.log(requestHandler);
   };
@@ -122,10 +124,10 @@ const Requests = () => {
             </h1>
           </section>
 
-          <Ballroom onClick={sendRequest} images={images}/>
+          <Ballroom ballroom={ballroom} images={images}/>
 
           <ToastContainer
-            position="top-center"
+            position="top-right"
             autoClose={2000}
             hideProgressBar={false}
             newestOnTop={false}
