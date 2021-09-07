@@ -10,6 +10,9 @@ import LocalCafeTwoToneIcon from '@material-ui/icons/LocalCafeTwoTone';
 
 export async function getStaticProps() {
   const requests = await prisma.request.findMany({
+    where: {
+      active: true,
+    },
     include: {
       ballroom: true,
       user: true,

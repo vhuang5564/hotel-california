@@ -1,6 +1,4 @@
-.hero {
-  background-image: url('../public/blinds.jpg');
-}
+
 .item {
   display: flex;
   justify-content: space-between;

@@ -20,7 +20,7 @@ export default function Search() {
           type="text"
           value={term}
           onChange={(e) => setTerm(e.target.value.trim())}
-          placeholder="Search Requests"
+          placeholder="Search all requests.."
         />
       </form>
     </div>
