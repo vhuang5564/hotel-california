@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Layout from '@/components/Layout.user';
+import styles from '@/styles/Faq.module.scss';
 
 export default function Faq() {
   return (
     <Layout>
-      <section>
+      <section styles={styles.container}>
         <h1>FAQ</h1>
         <h2>What is Hotel California?</h2>
         <p>Hotel California is an app that lets you connect with our staff here at Hotel California when it comes to looking for more room refreshments or

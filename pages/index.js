@@ -21,14 +21,18 @@ export default function Home({ ballrooms }) {
           <Link key={ballroom.id} href="/[ballroom]/requests" as={`/${ballroom.id}/requests`} >
             {/* <Link href="/" key={ballroom.id}> */}
               <a className={styles.card}>
-                <h2>{ballroom.name}</h2>
                 <div
                   className={styles.background}
                   style={{
                     backgroundImage: `url(${ballroom.imageUrl})`
                     // backgroundImage: `url('/palm_leaf.jpg)`
                   }}
-                ></div>
+                >
+                  <br/>
+                  <br/>
+                  <br/>
+                  <h2>{ballroom.name}</h2>
+                </div>
               </a>
             </Link>
           ))}
