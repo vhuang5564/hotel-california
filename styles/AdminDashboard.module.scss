@@ -35,14 +35,15 @@
     color: black;    
     box-shadow: 2px 3px 5px rgb(0 0 0 / 30%);
     justify-items: start;
-    display: grid;
-    grid-template-columns: 350px 50px 100px;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "name phone icon"
-    "text ballroom icon"
-    "date date icon";
+    // display: grid;
+    // grid-template-columns: 350px 50px 100px;
+    // grid-template-rows: auto;
+    // grid-template-areas: 
+    // "name phone icon"
+    // "text ballroom icon"
+    // "date date icon";
     border-left: thick solid black;
+    text-align: start;
   }
 }
 

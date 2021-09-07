@@ -127,6 +127,9 @@ export default function Reviews({ data }) {
               <Tooltip title="And save to database">
                 <button
                   className="btn-secondary btn-icon"
+                  style={{
+                    margin: 0
+                  }}
                   onClick={() => handleRequestUpdate(item.id)}
                 >
                   <ImCheckmark2 />
