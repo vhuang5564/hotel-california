@@ -1,14 +1,13 @@
 import prisma from '../../../lib/prisma';
 
 export default async function requestHandler(req, res) {
-  // console.log(req.body);
   
   try {
-    const data = req.body;
+    const data = req.body
     const createdRequest = await prisma.request.create({
-      data,
+        data
     });
-    res.status(201).json(createdRequest)
+    await res.status(201).json({message: "Saved the request"})
   } catch(e) {
     res.status(500);
     res.json({error: "Sorry unable to save request to database"})
