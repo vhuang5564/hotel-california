@@ -1,5 +1,4 @@
 import styles from '@/styles/Showcase.module.css';
-import Ballroom from './Ballroom';
 
 export default function Showcase() {
   return (

@@ -1,14 +1,13 @@
 import prisma from '../../lib/prisma';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Layout from '@/components/Layout.user';
+import LayoutAdmin from '@/components/Layout.admin';
 
-export default function SearchPage({ data } ) {
+export default function SearchPage({ data }) {
   const router = useRouter();
-  console.log('>>>>>>>>>>>>>>>>>>>', router.query.term);
   return (
-    <Layout title="Search Results">
-      <Link href="/admin/dashboard">Go Back</Link>
+    <LayoutAdmin title="Search Results">
+      <Link href="/admin/dashboard"><a style={{color: "red"}}>Go Back</a></Link>
       <h1>Search Results for {router.query.term}</h1>
       {data.length === 0 && <h3>No requests to show</h3>}
       {data.map((item) => (
@@ -16,7 +15,7 @@ export default function SearchPage({ data } ) {
           <span>by {item.user?.firstName} </span>
           <span>{item.user?.lastName}</span>
           <br />
-          <span>{item.user?.phoneNumber}</span>
+          <span>{item.user?.phoneNumber} </span>
           <span>{item.user?.email}</span>
           <br />
           <span> {item.text}</span>
@@ -27,10 +26,10 @@ export default function SearchPage({ data } ) {
               color: 'red',
             }}
           >
-            posted at {item.createdAt.slice(11, 16)}
+            posted at {item.createdAt.slice(11, 16)} 
           </span>
           <span>
-            {new Date(item.createdAt).toLocaleDateString('en-US', {
+             {new Date(item.createdAt).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
               day: 'numeric',
@@ -38,7 +37,7 @@ export default function SearchPage({ data } ) {
           </span>
         </div>
       ))}
-    </Layout>
+    </LayoutAdmin>
   );
 }
 

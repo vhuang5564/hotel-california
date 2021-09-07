@@ -44,7 +44,7 @@ export default function Review({ data }) {
   
 
   return (
-    <div className={styles.hero}>
+    
       <Layout title="Hotel California | Leave A Review">
         <main>
           <div className={styles.auth}>
@@ -105,6 +105,6 @@ export default function Review({ data }) {
           </section>
         </main>
       </Layout>
-    </div>
+    
   );
 }
