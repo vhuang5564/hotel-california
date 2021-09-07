@@ -1,5 +1,6 @@
 import LayoutAdmin from '@/components/Layout.admin';
 import prisma from '../../lib/prisma';
+import styles from '@/styles/AdminReviews.module.scss';
 
 export async function getStaticProps() {
   const reviews = await prisma.review.findMany({
@@ -24,20 +25,13 @@ export default function Reviews({ data }) {
     <LayoutAdmin title="Admin Dashboard Reviews | Hotel California">
       <section>
         {data?.map((item) => (
-          <div key={item.id} >
+          <div key={item.id} className={styles.item}>
             <span>rating: {item.rating}</span>
-            <br />
-            <span>by {item.user?.firstName} </span>
-            <span>{item.user?.lastName}</span>
-            <br />
+            <span className={styles.time}>{item.createdAt.slice(0, 10)}</span>
+            <span>by {item.user?.firstName} {item.user?.lastName}</span>
             <span> {item.user?.email}</span>
-            <br />
-            <span> {item.user?.phoneNumber}</span>
-            <br />
-            <span> {item.text}</span>
-            <br />
-            <hr />
-            <span>{item.createdAt.slice(0, 10)}</span>
+            <span className={styles.phone}> {item.user?.phoneNumber}</span>
+            <span className={styles.text}> {item.text}</span>
           </div>
         ))}
         

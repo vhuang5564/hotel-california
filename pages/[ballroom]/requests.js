@@ -4,11 +4,38 @@ import Image from 'next/image';
 import styles from '@/styles/Ballroom.module.scss';
 import Ballroom from '@/components/Ballroom';
 import Layout from '@/components/Layout.user';
+import prisma from '../../lib/prisma';
 
 import { ToastContainer, toast } from 'react-toastify';
 import { useContext } from 'react';
 import AppsIcon from '@material-ui/icons/Apps';
 // import requestHandler from 'pages/api/requests/create';
+
+export const getStaticPaths = async() => {
+
+  return {
+    paths:[{ params: {ballroom: "Sandy Beach Ballroom"}}, { params: {ballroom: "Grand Ballroom"}},
+      { params: {ballroom: "Santa Monica Ballroom"}}, { params: {ballroom: "Disney Ballroom"}},
+      { params: {ballroom: "Ocean View Ballroom"}}, { params: {ballroom: "Buena Vista Ballroom"}}],
+    fallback: false,
+  };
+};
+
+export async function getStaticProps() {
+  const createRequest = await prisma.request.create({
+    data: {
+      text: 'text',
+      ballroomId: 1,
+    }
+  });
+
+  createRequest;
+
+  return {
+    props: {},
+  };
+
+};
 
 const images = [
   {
@@ -86,26 +113,24 @@ const images = [
 ];
 
 
+
+const createRequest = async(image) => {
+  toast.success('Your request has been sent!', {
+    position: "top-center",
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: false,
+    progress: undefined,
+  });
+
+  console.log(image);
+};
+
 const Requests = () => {
   const router = useRouter();
   const { ballroom } = router.query;
-
-  const sendRequest = (image) => {
-    toast.success('Your request has been sent!', {
-      position: "top-center",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      progress: undefined,
-    });
-  
-    console.log('text', image.title);
-    console.log('ballroom', ballroom);
-
-    // console.log(requestHandler);
-  };
 
   return (
     <>
@@ -122,7 +147,7 @@ const Requests = () => {
             </h1>
           </section>
 
-          <Ballroom onClick={sendRequest} images={images}/>
+          <Ballroom onClick={(image) => createRequest(image)} images={images}/>
 
           <ToastContainer
             position="top-center"
