@@ -11,7 +11,7 @@ export default function HeaderAdmin() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Link href='/'>
+        <Link href='/admin/dashboard'>
           <a>HOTEL <span style={{fontFamily: "'Allison', cursive", fontSize: "190%", fontWeight: "bold"}}>California</span></a>
         </Link>
       </div>
@@ -22,7 +22,7 @@ export default function HeaderAdmin() {
         <ul>
           <li>
             <Link href='/reviews'>
-              <a>Leave a Review</a>
+              <a>Reviews</a>
             </Link>
           </li>
           {user ? (
