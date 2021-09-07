@@ -21,7 +21,7 @@ export default function HeaderAdmin() {
       <nav>
         <ul>
           <li>
-            <Link href='/reviews'>
+            <Link href='/admin/user_reviews'>
               <a>Reviews</a>
             </Link>
           </li>

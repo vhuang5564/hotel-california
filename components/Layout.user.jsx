@@ -4,10 +4,9 @@ import Header from './Header.user'
 import Footer from './Footer'
 import Showcase from './Showcase'
 import Sidebar from './Sidebar'
-// import InfoBox from './InfoBox'
 import styles from '@/styles/Layout.user.module.css'
 
-export default function Layout({ title, keywords, description, children, showcase }) {
+export default function Layout({ title, keywords, description, children }) {
   const router = useRouter()
 
   return (

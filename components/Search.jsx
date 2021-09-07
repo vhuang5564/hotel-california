@@ -17,10 +17,11 @@ export default function Search() {
     <div className={styles.search}>
       <form onSubmit={handleSubmit}>
         <input
+        
           type="text"
           value={term}
           onChange={(e) => setTerm(e.target.value.trim())}
-          placeholder="Search all requests.."
+          placeholder=" Search all requests.. "
         />
       </form>
     </div>
