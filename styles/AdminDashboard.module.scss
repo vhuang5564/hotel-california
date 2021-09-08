@@ -27,14 +27,14 @@
 
   &_inner {
     background-color: white;
-    width: 55%;
-    border: 1px solid;
+    width: 60%;
     padding: 5px;
     margin: 20px;
     font-family: sans-serif;
-    color: black;    
+    color: black;
     box-shadow: 2px 3px 5px rgb(0 0 0 / 30%);
     justify-items: start;
+
     // display: grid;
     // grid-template-columns: 350px 50px 100px;
     // grid-template-rows: auto;
@@ -42,18 +42,17 @@
     // "name phone icon"
     // "text ballroom icon"
     // "date date icon";
+
     border-left: thick solid black;
     text-align: start;
   }
 }
 
-.header {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  background-color: #e07800;
-  overflow: hidden;
-  margin-top: 50px;
-  color: white;
+.chat {
+  background-color: white;
+  max-width: 472px;
+  position: absolute;
+  top: 0px;
+  left: 780px;
+  box-shadow: 2px 3px 5px rgb(0 0 0 / 30%);
 }
-

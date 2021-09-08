@@ -13,6 +13,10 @@ import Button from '@material-ui/core/Button';
 import Popover from '@material-ui/core/Popover';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import Box from '@material-ui/core/Box';
+import AblyChatComponent from '@/components/AblyChatComponent';
+import { useRef } from "react";
+import useDraggable from '../../utils/useDraggable';
+
 
 export async function getStaticProps() {
   const requests = await prisma.request.findMany({
@@ -71,8 +75,26 @@ export default function Reviews({ data }) {
     }
   };
 
+
+  const DraggableCard = ({ children }) => {
+    const cardRef = useRef(null);
+    useDraggable(cardRef);
+  
+    return (
+      <div  ref={cardRef}>
+        {children}
+      </div>
+    );
+  };
+  
+
+
   return (
     <LayoutAdmin title="Admin Dashboard | Hotel California" showcase={data.length}>
+
+      <div>
+      <DraggableCard><section className={styles.chat}><AblyChatComponent /></section></DraggableCard>
+
        <ToastContainer
        theme="colored"
        position="top-right"
@@ -83,6 +105,7 @@ export default function Reviews({ data }) {
        closeButton={false}
        icon={false}
           />
+
       <section className={styles.container}>
         {data?.map((item) => (
           <div key={item.id} className={styles.container_inner}>
@@ -147,6 +170,7 @@ export default function Reviews({ data }) {
           </div>
         ))}
       </section>
+      </div>
     </LayoutAdmin>
   );
 }
