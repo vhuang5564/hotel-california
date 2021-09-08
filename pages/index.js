@@ -1,4 +1,4 @@
-import Head from 'next/head';
+
 import prisma from '../lib/prisma';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -19,13 +19,11 @@ export default function Home({ ballrooms }) {
         <div className={styles.grid}>
           {ballrooms.map((ballroom) => (
           <Link key={ballroom.id} href="/[ballroom]/requests" as={`/${ballroom.id}/requests`} >
-            {/* <Link href="/" key={ballroom.id}> */}
               <a className={styles.card}>
                 <div
                   className={styles.background}
                   style={{
-                    backgroundImage: `url(${ballroom.imageUrl})`
-                    // backgroundImage: `url('/palm_leaf.jpg)`
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${ballroom.imageUrl})`
                   }}
                 >
                   <br/>
