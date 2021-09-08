@@ -6,8 +6,9 @@
   color: #333;
   height: 60px;
   padding: 0 30px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 
 .header a {
   color: #333;

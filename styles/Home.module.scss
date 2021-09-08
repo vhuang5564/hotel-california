@@ -103,15 +103,22 @@
 
 .card h2 {
   // margin: 0 1rem 2rem 2rem;
-  color: #282525;
-  background-color: rgba(255, 255, 255, 0.77);
+  margin-top: 1.1rem;
+  // color: #282525;
+  color: white;
+  // background-color: rgba(255, 255, 255, 0.77);
   // background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));
-  padding-top: 19px;
-  font-size: 180%;
+  padding-top: 25px;
+  font-size: 215%;
+  font-family: 'Monoton', cursive;
   border-radius: 2px;
   width: 100%;
   height: 90px;
   z-index: 5;
+}
+.card h2:hover,
+.card h2:focus {
+  display: none;
 }
 
 
@@ -141,6 +148,7 @@
     position: fixed;
     z-index: 0;
     opacity: 0.4;
+    
   }
 }
 

@@ -19,8 +19,8 @@ export default function Header() {
             HOTEL{' '}
             <span
               style={{
-                fontFamily: "'Allison', cursive",
-                fontSize: '190%',
+                fontFamily: "'Monoton', cursive",
+                fontSize: '130%',
                 fontWeight: 'bold',
               }}
             >
@@ -71,8 +71,10 @@ export default function Header() {
               <li>
                 <Link href="/account/login">
                   <a className="btn-secondary btn-icon">
-                    <FaSignInAlt />
-                    Login
+                    {/* <FaSignInAlt />
+                    Login */}
+                     <FaSignOutAlt />
+                  Logout
                   </a>
                 </Link>
               </li>
