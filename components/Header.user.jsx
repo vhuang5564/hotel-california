@@ -20,7 +20,7 @@ export default function Header() {
             <span
               style={{
                 fontFamily: "'Monoton', cursive",
-                fontSize: '130%',
+                fontSize: '160%',
                 fontWeight: 'bold',
               }}
             >
@@ -31,6 +31,11 @@ export default function Header() {
       </div>
       <nav>
         <ul>
+        <li>
+            <Link href="#">
+              <a>Welcome <span style={{fontFamily: "'Monoton', cursive", color: "red"}}>Jennifer Aniston</span></a>
+            </Link>
+          </li>
           <li>
             <Link href="/reviews">
               <a>Leave a Review</a>
