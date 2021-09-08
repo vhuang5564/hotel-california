@@ -14,7 +14,7 @@ import Popover from '@material-ui/core/Popover';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import Box from '@material-ui/core/Box';
 import dynamic from 'next/dynamic'
-const AblyChatComponent = dynamic(() => import('../components/AblyChatComponent'), { ssr: false });
+const AblyChatComponent = dynamic(() => import('../../components/AblyChatComponent'), { ssr: false });
 import { useRef } from "react";
 import useDraggable from '../../utils/useDraggable';
 
