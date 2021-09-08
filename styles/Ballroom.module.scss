@@ -32,20 +32,28 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.35);
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+  
 }
 .ballroom * {
   z-index: 5;
 }
 .ballroom:focus {
   opacity: 0.5;
-  
 }
+
 .ballroom:hover{
   transform: scale(0.95);
   transition: ease-in-out 0.25s;
+  opacity: 0.9;
 }
+.ballroom:disabled {
+  opacity: 0.35;
+  transform: scale(0.93);
+  cursor: not-allowed;
+}
+
 .wording {
   font-size: 170%;
   text-transform: capitalize;
@@ -70,27 +78,4 @@
 .wording:hover:after { 
   width: 100%; 
   left: 0; 
-}
-
-.hero {
-    /* Sizing */
-    width: 100vw;
-    // height: 100vh;
-    
-    // /* Flexbox stuff */
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    
-    // /* Text styles */
-    // text-align: center;
-    // color: white;
-    
-    // /* Background styles */
-    // background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.1)), url('/bw_palm_leaf.png');
-    background-image: url('https://images.pexels.com/photos/62693/pexels-photo-62693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
