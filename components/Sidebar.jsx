@@ -11,7 +11,8 @@ import { FaQuestionCircle } from 'react-icons/fa';
 import { AiOutlineHome } from 'react-icons/ai';
 import Modal from '@/components/Modal';
 import { useState } from 'react';
-import AblyChatComponent from './AblyChatComponent';
+import dynamic from 'next/dynamic'
+const AblyChatComponent = dynamic(() => import('../components/AblyChatComponent'), { ssr: false });
 
 
 
