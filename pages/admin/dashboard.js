@@ -92,7 +92,8 @@ export default function Reviews({ data }) {
   return (
     <LayoutAdmin title="Admin Dashboard | Hotel California" showcase={data.length}>
       <ToastContainer />
-      
+      <div>
+      <DraggableCard><section className={styles.chat}><AblyChatComponent /></section></DraggableCard>
       <section className={styles.container}>
         {data?.map((item) => (
           <div key={item.id} className={styles.container_inner}>
@@ -151,11 +152,10 @@ export default function Reviews({ data }) {
                 </button>
               </Tooltip>
             </div>
-            {/* {request(item.text)} */}
           </div>
         ))}
       </section>
-      <DraggableCard><section className={styles.chat}><AblyChatComponent /></section></DraggableCard>
+      </div>
     </LayoutAdmin>
   );
 }
