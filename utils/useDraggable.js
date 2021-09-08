@@ -28,7 +28,7 @@ export default function useDraggable(el) {
     el.current.addEventListener("mousedown", handleMouseDown);
 
     return () => {
-      el.current.removeEventListener("mousedown", handleMouseDown);
+      el.current?.removeEventListener("mousedown", handleMouseDown);
     };
   }, [dx, dy]);
 
