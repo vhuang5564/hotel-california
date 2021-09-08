@@ -12,7 +12,7 @@ export default function HeaderAdmin() {
     <header className={styles.header}>
       <div className={styles.logo}>
         <Link href='/admin/dashboard'>
-          <a>HOTEL <span style={{fontFamily: "'Allison', cursive", fontSize: "190%", fontWeight: "bold"}}>California</span></a>
+          <a>HOTEL <span style={{fontFamily: "'Monoton', cursive", fontSize: "170%", fontWeight: "bold"}}>California</span></a>
         </Link>
       </div>
 
@@ -20,6 +20,11 @@ export default function HeaderAdmin() {
 
       <nav>
         <ul>
+        <li>
+            <Link href="#">
+              <a>Welcome <span style={{fontFamily: "'Monoton', cursive", color: "red"}}>Big Boss Admin1</span></a>
+            </Link>
+          </li>
           <li>
             <Link href='/admin/user_reviews'>
               <a>Reviews</a>

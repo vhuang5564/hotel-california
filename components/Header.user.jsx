@@ -20,7 +20,7 @@ export default function Header() {
             <span
               style={{
                 fontFamily: "'Monoton', cursive",
-                fontSize: '130%',
+                fontSize: '160%',
                 fontWeight: 'bold',
               }}
             >
