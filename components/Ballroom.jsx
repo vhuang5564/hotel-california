@@ -43,7 +43,7 @@ export default function Ballroom({ ballroom, images }) {
     <>
       <ToastContainer
         position="top-right"
-        autoClose={2000}
+        autoClose={2500}
         hideProgressBar={false}
         rtl={false}
         pauseOnHover={false}
