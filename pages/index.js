@@ -26,11 +26,18 @@ export default function Home({ ballrooms }) {
                     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${ballroom.imageUrl})`
                   }}
                 >
-                  <br/>
-                  <br/>
-                  <br/>
+                  <br />
                   <h2>{ballroom.name}</h2>
-                </div>
+                  </div>
+                  <div
+                  className={styles.background}
+                  style={{
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${ballroom.imageUrl})`
+                  }}
+                >
+                  <br />
+                  <h2>{ballroom.name}</h2>
+                  </div>
               </a>
             </Link>
           ))}
