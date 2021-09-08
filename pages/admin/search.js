@@ -2,6 +2,7 @@ import prisma from '../../lib/prisma';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import LayoutAdmin from '@/components/Layout.admin';
+import styles from '@/styles/AdminReviews.module.scss';
 
 export default function SearchPage({ data }) {
   const router = useRouter();
@@ -11,30 +12,17 @@ export default function SearchPage({ data }) {
       <h1>Search Results for {router.query.term}</h1>
       {data.length === 0 && <h3>No requests to show</h3>}
       {data.map((item) => (
-        <div key={item.id}>
-          <span>by {item.user?.firstName} </span>
-          <span>{item.user?.lastName}</span>
-          <br />
-          <span>{item.user?.phoneNumber} </span>
-          <span>{item.user?.email}</span>
-          <br />
-          <span> {item.text}</span>
-          <span> in {item.ballroom?.name}</span>
-          <hr />
-          <span
-            style={{
-              color: 'red',
-            }}
-          >
-            posted at {item.createdAt.slice(11, 16)} 
-          </span>
-          <span>
-             {new Date(item.createdAt).toLocaleDateString('en-US', {
+        <div key={item.id} className={styles.item}>
+          <span className={styles.time}>{item.createdAt.slice(11, 16)} {new Date(item.createdAt).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
               day: 'numeric',
-            })}
-          </span>
+            })}</span>
+          <span>by {item.user?.firstName} {item.user?.lastName}</span>
+          <span>{item.user?.email}</span>
+          <span className={styles.phone}>{item.user?.phoneNumber} </span>
+          <span className={styles.text}> {item.text}</span>
+          <span> in {item.ballroom?.name}</span>
         </div>
       ))}
     </LayoutAdmin>
