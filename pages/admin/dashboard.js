@@ -7,6 +7,7 @@ import { ImCheckmark2 } from 'react-icons/im';
 import { RiPhoneFill } from 'react-icons/ri';
 import LocalCafeTwoToneIcon from '@material-ui/icons/LocalCafeTwoTone';
 import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Tooltip } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import Popover from '@material-ui/core/Popover';
@@ -15,6 +16,7 @@ import Box from '@material-ui/core/Box';
 import AblyChatComponent from '@/components/AblyChatComponent';
 import { useRef } from "react";
 import useDraggable from '../../utils/useDraggable';
+
 
 export async function getStaticProps() {
   const requests = await prisma.request.findMany({
@@ -39,9 +41,6 @@ export async function getStaticProps() {
 }
 
 export default function Reviews({ data }) {
-  // console.log(data[0].text); // grand.jpg
-  // returns icon for specific request takes in string data.text
-  // need to adjust later to include icons of every request
   const request = (text) => {
     switch (text) {
       case 'Need help with audio visual\n':
@@ -52,8 +51,7 @@ export default function Reviews({ data }) {
         return;
     }
   };
-  // request(data[0].text);
-
+  
   const handleRequestUpdate = async (id) => {
     const res = await fetch('/api/requests/update', {
       body: JSON.stringify({
@@ -70,7 +68,9 @@ export default function Reviews({ data }) {
     if (!res.ok) {
       console.log(data.message);
     } else {
-      toast.success('Status updated');
+      toast.warn('Saved to database', {
+        icon: false
+        });
       router.push('/admin/dashboard');
     }
   };
@@ -91,9 +91,21 @@ export default function Reviews({ data }) {
 
   return (
     <LayoutAdmin title="Admin Dashboard | Hotel California" showcase={data.length}>
-      <ToastContainer />
+
       <div>
       <DraggableCard><section className={styles.chat}><AblyChatComponent /></section></DraggableCard>
+
+       <ToastContainer
+       theme="colored"
+       position="top-right"
+       autoClose={2000}
+       hideProgressBar={false}
+       rtl={false}
+       pauseOnHover={false}
+       closeButton={false}
+       icon={false}
+          />
+
       <section className={styles.container}>
         {data?.map((item) => (
           <div key={item.id} className={styles.container_inner}>
@@ -145,6 +157,9 @@ export default function Reviews({ data }) {
               <Tooltip title="And save to database">
                 <button
                   className="btn-secondary btn-icon"
+                  style={{
+                    margin: 0
+                  }}
                   onClick={() => handleRequestUpdate(item.id)}
                 >
                   <ImCheckmark2 />

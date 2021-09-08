@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  z-index: 4;
 }
 
 .showcase::after {
