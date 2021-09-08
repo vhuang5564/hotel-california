@@ -63,7 +63,7 @@ export default function Sidebar() {
               </Button>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/faq">
             <a>
               <Button>
                 <FaQuestionCircle />
