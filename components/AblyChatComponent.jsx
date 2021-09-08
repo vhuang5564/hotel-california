@@ -58,7 +58,7 @@ const AblyChatComponent = () => {
                 <textarea
                     ref={(element) => { inputBox = element; }}
                     value={messageText}
-                    placeholder="Type a message..."
+                    placeholder="Type your name and a message..."
                     onChange={e => setMessageText(e.target.value)}
                     onKeyPress={handleKeyPress}
                     className={styles.textarea}

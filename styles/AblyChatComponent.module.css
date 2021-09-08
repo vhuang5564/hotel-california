@@ -40,6 +40,9 @@
   font-size: 1.2em;
   resize: none ;
 }
+.textarea:focus-visible {
+  outline: none;
+}
 .button:disabled {
   color: #fff;
   opacity: 0.5;
