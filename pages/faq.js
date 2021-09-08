@@ -16,7 +16,7 @@ export default function Faq() {
           personnel will receive a notification that will help you right away and expedite the process.</p>
         <br/>
         <h2>Chatting</h2>
-        <p>Our built in chatting app lets you interact with our staff in real time. Have you got a specific query that our options don't cover? Feel free to hit up
+        <p>Our built in chatting app lets you interact with our staff in real time. Have you got a specific query that our options don&apos;t cover? Feel free to hit up
           one of our employees at any time and allow them to assist you.</p>
         <br/>
         <h2>Satisfied?</h2>
