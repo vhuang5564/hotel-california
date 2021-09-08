@@ -5,8 +5,9 @@
   align-items: center;
   margin: 20px 0;
   padding: 13px;
-  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
-  
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.45);
+  background-color: white;
+  opacity: 0.75;
   
 }
 
@@ -35,6 +36,12 @@
   margin: auto;
   padding: 30px;
   box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.52);
+  background-image: url("../public/bw_palm_leaf.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten(5);
+  margin-bottom: 5rem;
+  
 }
 
 .auth label {
