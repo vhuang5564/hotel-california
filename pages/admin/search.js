@@ -2,29 +2,75 @@ import prisma from '../../lib/prisma';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import LayoutAdmin from '@/components/Layout.admin';
-import styles from '@/styles/AdminReviews.module.scss';
+import { DataGrid } from '@mui/x-data-grid';
 
-export default function SearchPage({ data }) {
+export default function Sear({ data }) {
   const router = useRouter();
+
+  const columns = [
+    { field: 'id', headerName: 'ID', width: 95 },
+    {
+      field: 'text',
+      headerName: 'REQUEST',
+      width: 230,
+    },
+    {
+      field: 'ballroom',
+      headerName: 'BALLROOM',
+      width: 170,
+    },
+    {
+      field: 'lastName',
+      headerName: 'LAST NAME',
+      width: 165,
+    },
+    {
+      field: 'firstName',
+      headerName: 'FIRST NAME',
+      width: 165,
+    },
+    {
+      field: 'date',
+      headerName: 'DATE',
+      width: 150,
+    },
+    {
+      field: 'time',
+      headerName: 'TIME',
+      width: 150,
+    },
+  ];
+
+  let rows = [];
+  rows = data.map((item) => {
+    return (rows = {
+      id: item.id,
+      firstName: item.user.firstName,
+      lastName: item.user.lastName,
+      ballroom: item.ballroom.name,
+      text: item.text,
+      date: item.createdAt.slice(0, 10),
+      time: item.createdAt.slice(11, 16)
+    });
+  });
+
   return (
     <LayoutAdmin title="Search Results">
-      <Link href="/admin/dashboard"><a style={{color: "red"}}>Go Back</a></Link>
-      <h1>Search Results for {router.query.term}</h1>
+      <Link href="/admin/dashboard">
+        <a style={{ color: 'red' }}>Go Back</a>
+      </Link>
+      <h1>Search Results for &quot;{router.query.term}&quot;:</h1>
       {data.length === 0 && <h3>No requests to show</h3>}
-      {data.map((item) => (
-        <div key={item.id} className={styles.item}>
-          <span className={styles.time}>{item.createdAt.slice(11, 16)} {new Date(item.createdAt).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}</span>
-          <span>by {item.user?.firstName} {item.user?.lastName}</span>
-          <span>{item.user?.email}</span>
-          <span className={styles.phone}>{item.user?.phoneNumber} </span>
-          <span className={styles.text}> {item.text}</span>
-          <span> in {item.ballroom?.name}</span>
-        </div>
-      ))}
+
+      <div style={{ height: 750, width: '100%', backgroundColor: "rgb(255, 255, 255, 0.9)" }}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          pageSize={12}
+          checkboxSelection
+          disableSelectionOnClick
+        />
+      </div>     
     </LayoutAdmin>
   );
 }
