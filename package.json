@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
+    "@material-ui/data-grid": "*",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "*",
+    "@mui/x-data-grid": "^4.0.0",
     "@prisma/client": "^2.30.0",
     "ably": "^1.2.13",
     "cookie": "^0.4.1",

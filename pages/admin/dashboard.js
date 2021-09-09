@@ -29,7 +29,7 @@ export async function getStaticProps() {
       user: true,
     },
     orderBy: {
-      createdAt: 'asc',
+      createdAt: 'desc',
     },
   });
 
@@ -137,12 +137,12 @@ export default function Reviews({ data }) {
                     <Popover
                       {...bindPopover(popupState)}
                       anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'center',
+                        vertical: 'top',
+                        horizontal: 'top',
                       }}
                       transformOrigin={{
                         vertical: 'top',
-                        horizontal: 'center',
+                        horizontal: 'right',
                       }}
                     >
                       <Box p={2}>
@@ -159,7 +159,7 @@ export default function Reviews({ data }) {
                 <button
                   className="btn-secondary btn-icon"
                   style={{
-                    margin: 0
+                    margin: "10px"
                   }}
                   onClick={() => handleRequestUpdate(item.id)}
                 >

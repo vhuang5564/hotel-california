@@ -33,7 +33,7 @@ export default function Header() {
         <ul>
         <li>
             <Link href="#">
-              <a>Welcome <span style={{fontFamily: "'Monoton', cursive", color: "red"}}>Jennifer Aniston</span></a>
+              <a>Welcome <span style={{fontFamily: "'Monoton', cursive", color: "red", fontSize: "110%"}}>Jennifer Aniston</span></a>
             </Link>
           </li>
           <li>
