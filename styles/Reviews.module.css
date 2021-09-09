@@ -45,7 +45,6 @@
   background-image: url("../public/bw_palm_leaf.png");
   background-position: right;
   background-repeat: no-repeat;
-  background-blend-mode: lighten(5);
   margin-bottom: 5rem;
   
 }
@@ -72,7 +71,25 @@
   width: 100%;
   font-size: 17px;
 }
-
+.auth h1 {
+  margin-left: 25%;
+}
 .auth div {
   margin-bottom: 20px;
+}
+
+.auth button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.off {
+  
+  color: rgb(112, 106, 106);
+}
+.on {
+  
+  color: rgb(226, 9, 9);
 }
