@@ -23,7 +23,7 @@ export default function Home({ ballrooms }) {
                 <div
                   className={styles.background}
                   style={{
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${ballroom.imageUrl})`
+                    backgroundImage: ` url('https://images.unsplash.com/photo-1527786356703-4b100091cd2c?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTE4fDMzOTkzNzF8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')`
                   }}
                 >
                   {/* <br /> */}
@@ -32,7 +32,7 @@ export default function Home({ ballrooms }) {
                   <div
                   className={styles.background}
                   style={{
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${ballroom.imageUrl})`
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.00)), url('https://images.unsplash.com/photo-1527786356703-4b100091cd2c?ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTE4fDMzOTkzNzF8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')`
                   }}
                 >
                   {/* <br /> */}
