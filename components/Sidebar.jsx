@@ -1,66 +1,67 @@
-import React from 'react';
-import Slide from '@material-ui/core/Slide';
-import { IconButton } from '@material-ui/core';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import Link from 'next/dist/client/link';
-import { Button } from '@material-ui/core';
-import styles from '../styles/Sidebar.module.scss';
+import Drawer from '@material-ui/core/Drawer';
+import Button from '@material-ui/core/Button';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import Link from 'next/link';
+import { useState } from 'react';
 import { BsChatDots } from 'react-icons/bs';
 import { MdRateReview } from 'react-icons/md';
 import { FaQuestionCircle } from 'react-icons/fa';
 import { AiOutlineHome } from 'react-icons/ai';
+import { IconButton } from '@material-ui/core';
+import styles from '../styles/Sidebar.module.scss';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Modal from '@/components/Modal';
-import { useState } from 'react';
-import dynamic from 'next/dynamic'
-const AblyChatComponent = dynamic(() => import('../components/AblyChatComponent'), { ssr: false });
+import dynamic from 'next/dynamic';
+const AblyChatComponent = dynamic(
+  () => import('../components/AblyChatComponent'),
+  { ssr: false }
+);
 
+export default function Sideb() {
+  const [showModal, setShowModal] = useState(false);
+  const [state, setState] = useState({
+    left: false,
+  });
 
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
 
-export default function Sidebar() {
-  const [checked, setChecked] = useState(false);
-  const [isActive, setActive] = useState(false);
-  const [showModal, setShowModal] = useState(false)
-  const toggleClass = () => {
-    setActive(!isActive);
+    setState({ ...state, [anchor]: open });
   };
-  const handleChange = () => {
-    setChecked((prev) => !prev);
-    setActive(!isActive);
-  };
 
-  return (
-    <div>
-      <IconButton className={isActive ? styles.active : styles.icon} onClick={handleChange}>
-        <ArrowForwardIosIcon />
-      </IconButton>
-      <Slide
-        direction="right"
-        in={checked}
-        mountOnEnter
-        unmountOnBlur={true}
-        unmountOnExit
-        className={styles.sidebar}
-      >
+  const openLeft = (anchor) => (
+    <div
+      className={styles.sidebar}
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
         <div>
           <Link href="/">
             <a>
               <Button>
                 <AiOutlineHome />
-                <p >HOME{' '}</p>
+                <p>HOME </p>
               </Button>
             </a>
           </Link>
-          
-              <Button onClick={() => setShowModal(true)}>
-                <BsChatDots />
-                <p>CHAT{' '}</p>
-              </Button>
-         
+
+          <Button onClick={() => setShowModal(true)}>
+            <BsChatDots />
+            <p>CHAT </p>
+          </Button>
+
           <Link href="/reviews">
             <a>
               <Button>
                 <MdRateReview />
-                <p>REVIEWS{' '}</p>
+                <p>REVIEWS </p>
               </Button>
             </a>
           </Link>
@@ -68,12 +69,27 @@ export default function Sidebar() {
             <a>
               <Button>
                 <FaQuestionCircle />
-                <p>FAQ{' '}</p>
+                <p>FAQ </p>
               </Button>
             </a>
           </Link>
         </div>
-      </Slide>
+      </List>
+    </div>
+  );
+
+  return (
+    <div>
+      <IconButton onClick={toggleDrawer('left', true)} className={styles.icon}>
+        <ArrowForwardIosIcon />
+      </IconButton>
+      <Drawer
+        anchor="left"
+        open={state['left']}
+        onClose={toggleDrawer('left', false)}
+      >
+        {openLeft('left')}
+      </Drawer>
       <Modal show={showModal} onClose={() => setShowModal(false)}><AblyChatComponent/></Modal>
     </div>
   );

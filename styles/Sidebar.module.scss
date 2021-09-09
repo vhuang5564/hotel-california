@@ -1,17 +1,17 @@
 .sidebar {
   display: flex !important;
-  background-color: lightgray !important;
+  background-color: rgb(220, 220, 220) !important;
   opacity: 0.97;
-  // border-radius: 0.5em !important;
-  // padding: 0.5em;
+  
   box-sizing: border-box;
   overflow: hidden;
-  // z-index: 3;
+  
   position: fixed !important;
   height: 100%;
-  width: 16%;
+  width: 12rem;
   flex-direction: column;
   z-index: 6;
+  margin-top: 60.4px;
 
   button {
     display: flex;
@@ -34,7 +34,7 @@
   position: fixed !important;
   z-index: 7;
   top: 50%;
-  // opacity: 0.5;
+  opacity: 0.9;
   color: red !important;
   transition: transform .2s;
 }
@@ -42,20 +42,11 @@
   margin: 8px;
 }
 
-.active {
-  position: fixed !important;
-  z-index: 7;
-  top: 50%;
-  // opacity: 0.5;
-  color: red !important;
-  transition: transform .2s;
-  transform: rotateZ(180deg) translateX(-15rem);
-}
+
 @media(max-width:992px){
-  .active {
-    transform:  translateX(-0.5rem) !important;
-  }
   .sidebar {
-    // overflow: hidden;
+    width: 9.75rem;
+    margin-top: 0;
   }
+ 
 }
