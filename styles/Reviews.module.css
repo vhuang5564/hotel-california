@@ -46,7 +46,11 @@
   background-position: right;
   background-repeat: no-repeat;
   margin-bottom: 5rem;
-  
+  transition: all .2s ease-in-out;
+}
+.auth:hover {
+  transform: scale(1.12);
+  box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 1);
 }
 
 .auth label {

@@ -86,7 +86,7 @@
   color: inherit;
   text-decoration: none;
 
-  border-radius: 2px;
+  // border-radius: 5px !important;
   transition: color 0.15s ease, border-color 0.15s ease;
   width: 23rem;
   position: relative;
@@ -104,16 +104,16 @@
 .card h2 {
   // margin: 0 1rem 2rem 2rem;
   margin-top: 1.1rem;
-  // color: #282525;
+  // color: orange;
   color: white;
-  // background-color: rgba(255, 255, 255, 0.77);
-  // background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));
-  padding-top: 25px;
+  // background-color: rgba(255, 255, 255, 0.6);
+  background: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.7));
+  padding-top: 15px;
   font-size: 215%;
   font-family: 'Monoton', cursive;
   border-radius: 2px;
   width: 100%;
-  height: 90px;
+  height: 126.5px;
   z-index: 5;
 }
 .card h2:hover,

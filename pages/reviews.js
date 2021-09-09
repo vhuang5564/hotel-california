@@ -78,6 +78,7 @@ export default function Review({ data }) {
               <textarea
                 id="text"
                 name="text"
+                autoFocus
                 type="textarea"
                 rows="5"
                 placeholder="Your review here... 🏄"
