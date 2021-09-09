@@ -22,7 +22,7 @@ export default function HeaderAdmin() {
         <ul>
         <li>
             <Link href="#">
-              <a>Welcome <span style={{fontFamily: "'Monoton', cursive", color: "red"}}>Big Boss Admin1</span></a>
+              <a>Welcome <span style={{fontFamily: "'Monoton', cursive", color: "red", fontSize: "110%"}}>Big Boss Admin1</span></a>
             </Link>
           </li>
           <li>

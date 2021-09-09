@@ -63,7 +63,7 @@ const AblyChatComponent = () => {
                     onKeyPress={handleKeyPress}
                     className={styles.textarea}
                 ></textarea>
-                <button type="submit" className={styles.button} disabled={messageTextIsEmpty}>Send</button>
+                <button type="submit" className={styles.button} disabled={messageTextIsEmpty} styles={{fontFamily:"'Montserrat', sans-serif"}}>Send</button>
             </form>
         </div>
     )

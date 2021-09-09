@@ -36,8 +36,28 @@
   top: 50%;
   opacity: 0.9;
   color: red !important;
-  transition: transform .2s;
+  animation: bounce 1.2s infinite;
 }
+
+@keyframes bounce {
+  from {left: 0px; }
+  to { left: 5px; }
+}
+// @keyframes moveInleft {
+//   0% {
+//       opacity: 0;
+//       transform: translateX(-100px);
+//   }
+
+//   80% {
+//       transform: translateX(10px);
+//   }
+//   100% {
+//       opacity: 1;
+//       transform: translate(0);
+//   }
+// }
+
 .sidebar p {
   margin: 8px;
 }
