@@ -38,3 +38,10 @@ Hotel California is an app that lets you connect with our staff here at the hote
 
 ## Dependencies
 
+- material-ui
+- prisma
+- ably
+- next
+- react
+- toastify
+- sass
