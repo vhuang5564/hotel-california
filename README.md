@@ -32,3 +32,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Final Product
+
+!["Screenshot of home page"](https://github.com/vhuang5564/hotel-california/blob/main/public/index.png)
+
+!["Screenshot of chat"](https://github.com/vhuang5564/hotel-california/blob/main/public/chat.png)
+
+!["Screenshot of ballroom"](https://github.com/vhuang5564/hotel-california/blob/main/public/ballroom_page.png)
+
+!["Screenshot of admin"](https://github.com/vhuang5564/hotel-california/blob/main/public/admin.png)
+
+!["Screenshot of reviews"](https://github.com/vhuang5564/hotel-california/blob/main/public/reviews.png)
+
+!["Screenshot of faq"](https://github.com/vhuang5564/hotel-california/blob/main/public/faq.png)
